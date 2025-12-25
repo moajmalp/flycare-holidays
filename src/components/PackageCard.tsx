@@ -1,7 +1,5 @@
-"use client";
-
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import { Calendar, MapPin, Tag } from "lucide-react";
 
 interface PackageCardProps {
@@ -23,11 +21,10 @@ const PackageCard: React.FC<PackageCardProps> = ({
         <div className="flex flex-col sm:flex-row gap-6 p-5 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
             {/* Thumbnail */}
             <div className="relative w-full sm:w-48 h-48 flex-shrink-0 overflow-hidden rounded-2xl">
-                <Image
+                <img
                     src={image}
                     alt={title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
             </div>
 

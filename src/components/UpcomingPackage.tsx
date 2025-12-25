@@ -1,7 +1,5 @@
-"use client";
-
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import { Calendar, MapPin } from "lucide-react";
 
 interface UpcomingPackageProps {
@@ -21,11 +19,10 @@ const UpcomingPackage: React.FC<UpcomingPackageProps> = ({
         <div className="flex flex-col sm:flex-row gap-4 p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
             {/* Thumbnail */}
             <div className="relative w-full sm:w-32 h-32 flex-shrink-0 overflow-hidden rounded-lg">
-                <Image
+                <img
                     src={image}
                     alt={title}
-                    fill
-                    className="object-cover"
+                    className="absolute inset-0 w-full h-full object-cover"
                 />
             </div>
 

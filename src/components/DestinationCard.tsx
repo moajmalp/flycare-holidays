@@ -1,7 +1,5 @@
-"use client";
-
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image"; // Removed to avoid build errors
 import { Star, MapPin, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
@@ -30,11 +28,10 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
         <div className="bg-white rounded-[32px] overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl group flex flex-col h-full">
             {/* Image Section */}
             <div className="relative h-72 w-full overflow-hidden">
-                <Image
+                <img
                     src={image}
                     alt={title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Price Tag */}
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm">

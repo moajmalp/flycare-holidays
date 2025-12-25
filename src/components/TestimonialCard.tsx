@@ -1,8 +1,6 @@
-"use client";
-
 import React from "react";
 import { Star, Play } from "lucide-react";
-import Image from "next/image";
+// import Image from "next/image";
 
 interface TestimonialCardProps {
     name: string;
@@ -37,7 +35,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
             {/* Video Placeholder if available */}
             {videoThumb && (
                 <div className="relative aspect-video mb-6 rounded-2xl overflow-hidden bg-gray-100 group">
-                    <Image src={videoThumb} alt="Review thumbnail" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={videoThumb} alt="Review thumbnail" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/30 transition-colors">
                         <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                             <Play size={20} className="text-primary fill-primary translate-x-0.5" />
@@ -52,7 +50,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
             <div className="flex items-center gap-4 pt-6 border-t border-gray-50">
                 <div className="w-12 h-12 rounded-full overflow-hidden bg-soft-bg relative">
-                    <Image src={avatar} alt={name} fill className="object-cover" />
+                    <img src={avatar} alt={name} className="absolute inset-0 w-full h-full object-cover" />
                 </div>
                 <div>
                     <h5 className="font-bold text-brand-dark leading-none pb-1">{name}</h5>

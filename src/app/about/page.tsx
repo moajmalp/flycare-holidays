@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import { Shield, Target, Users, Award } from "lucide-react";
@@ -11,12 +11,10 @@ const AboutPage = () => {
         <div className="bg-white min-h-screen">
             {/* Hero Section */}
             <section className="relative h-[60vh] w-full flex items-center justify-center overflow-hidden">
-                <Image
+                <img
                     src="/images/kerala.png"
                     alt="About Flycare Holidays"
-                    fill
-                    className="object-cover"
-                    priority
+                    className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-brand-dark/60" />
                 <div className="relative z-10 text-center px-4">
@@ -56,11 +54,10 @@ const AboutPage = () => {
                             </div>
                         </div>
                         <div className="relative aspect-square rounded-[56px] overflow-hidden shadow-2xl">
-                            <Image
+                            <img
                                 src="/images/manali.png"
                                 alt="Flycare Team"
-                                fill
-                                className="object-cover"
+                                className="absolute inset-0 w-full h-full object-cover"
                             />
                         </div>
                     </div>

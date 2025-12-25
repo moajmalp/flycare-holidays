@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import NextImage from "next/image";
+// Image import removed to avoid type conflict, using standard <img> tags
+
 import DestinationCard from "@/components/DestinationCard";
 import FeatureCard from "@/components/FeatureCard";
 import PackageCard from "@/components/PackageCard";
@@ -143,12 +144,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="px-4 py-10 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="relative h-[650px] w-full rounded-[48px] overflow-hidden group">
-          <NextImage
+          <img
             src="/images/kashmir.png"
             alt="Hero Background"
-            fill
-            className="object-cover transition-transform duration-1000 group-hover:scale-105"
-            priority
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/20 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center text-center p-12 mb-12">
@@ -254,12 +253,12 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="pt-12">
                   <div className="relative aspect-[4/5] rounded-[40px] overflow-hidden mb-4 shadow-2xl transition-transform duration-500 hover:scale-105">
-                    <NextImage src="/images/kashmir.png" alt="Traveler" fill className="object-cover" />
+                    <img src="/images/kashmir.png" alt="Traveler" className="absolute inset-0 w-full h-full object-cover" />
                   </div>
                 </div>
                 <div>
                   <div className="relative aspect-[4/5] rounded-[40px] overflow-hidden mb-4 shadow-2xl transition-transform duration-500 hover:scale-105">
-                    <NextImage src="/images/vietnam.png" alt="Traveler" fill className="object-cover" />
+                    <img src="/images/vietnam.png" alt="Traveler" className="absolute inset-0 w-full h-full object-cover" />
                   </div>
                   <div className="bg-primary p-8 rounded-[40px] text-white shadow-xl shadow-primary/20">
                     <Star size={32} fill="white" className="mb-4" />
@@ -432,7 +431,7 @@ export default function Home() {
       {/* CTA Banner */}
       <section className="py-32 px-4">
         <div className="max-w-7xl mx-auto w-full relative h-[450px] rounded-[56px] overflow-hidden group">
-          <NextImage src="/images/kerala.png" alt="CTA BG" fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
+          <img src="/images/kerala.png" alt="CTA BG" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
           <div className="absolute inset-0 bg-brand-dark/60 backdrop-blur-[2px]" />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
             <motion.h2

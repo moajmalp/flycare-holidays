@@ -1,7 +1,5 @@
-"use client";
-
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -19,12 +17,10 @@ const ItineraryPage = ({ params }: { params: { slug: string } }) => {
         <div className="bg-white min-h-screen">
             {/* Header Image Section */}
             <section className="relative h-[65vh] w-full overflow-hidden">
-                <Image
+                <img
                     src={data.headerImage}
                     alt={data.title}
-                    fill
-                    className="object-cover"
-                    priority
+                    className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-10 md:p-20 text-center md:text-left bg-gradient-to-t from-white via-white/50 to-transparent pt-32">
@@ -108,7 +104,7 @@ const ItineraryPage = ({ params }: { params: { slug: string } }) => {
 
                     <div className="relative z-10 flex flex-col items-center">
                         <div className="w-20 h-20 bg-primary/20 rounded-3xl flex items-center justify-center mb-8 border border-primary/30">
-                            <Image src="/images/kerala.png" alt="Flycare" width={40} height={40} className="rounded-lg object-cover" />
+                            <img src="/images/kerala.png" alt="Flycare" className="w-10 h-10 rounded-lg object-cover" />
                         </div>
                         <h3 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter max-w-lg leading-[1.1]">Ready to make this trip a reality?</h3>
                         <p className="mb-12 text-gray-400 max-w-md mx-auto text-lg">Contact our travel experts via WhatsApp or Inquiry to start planning your Flycare adventure.</p>
