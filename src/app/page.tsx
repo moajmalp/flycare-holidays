@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import DestinationCard from "@/components/DestinationCard";
 import FeatureCard from "@/components/FeatureCard";
 import PackageCard from "@/components/PackageCard";
