@@ -69,7 +69,7 @@ const BlogPage = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 }}
-                            className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-8 leading-[0.9]"
+                            className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 leading-[0.9]"
                         >
                             Travel <br />
                             <span className="text-primary italic">Inspiration</span>
@@ -79,7 +79,7 @@ const BlogPage = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.2 }}
-                            className="text-white/60 text-xl md:text-2xl max-w-2xl font-medium leading-relaxed"
+                            className="text-white/60 text-lg md:text-xl max-w-2xl font-medium leading-relaxed"
                         >
                             Expert tips, immersive destination guides, and untold stories from the world's most beautiful corners.
                         </motion.p>
@@ -123,10 +123,10 @@ const BlogPage = () => {
                                                 {post.readTime}
                                             </div>
                                         </div>
-                                        <h2 className="text-3xl md:text-4xl font-black text-brand-dark group-hover:text-primary transition-colors tracking-tight leading-tight">
+                                        <h2 className="text-2xl md:text-3xl font-black text-brand-dark group-hover:text-primary transition-colors tracking-tight leading-tight">
                                             {post.title}
                                         </h2>
-                                        <p className="text-secondary text-lg leading-relaxed line-clamp-3 font-medium">
+                                        <p className="text-secondary text-base leading-relaxed line-clamp-3 font-medium">
                                             {post.excerpt}
                                         </p>
                                         <div className="pt-4 flex items-center justify-between border-t border-gray-100">

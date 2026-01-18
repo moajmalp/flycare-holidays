@@ -47,7 +47,7 @@ const GalleryPage = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-8 leading-[0.9]"
+                        className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 leading-[0.9]"
                     >
                         Captured <br />
                         <span className="text-primary italic">Moments</span>
@@ -57,7 +57,7 @@ const GalleryPage = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="text-white/60 text-xl md:text-2xl max-w-2xl mx-auto font-medium leading-relaxed"
+                        className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed"
                     >
                         Explore the world through the lens of our travelers. Every photo tells a story of discovery and wonder.
                     </motion.p>
@@ -73,8 +73,8 @@ const GalleryPage = () => {
                                 key={cat}
                                 onClick={() => setFilter(cat)}
                                 className={`px-8 py-3 rounded-full font-bold transition-all duration-300 ${filter === cat
-                                        ? "bg-primary text-white shadow-lg shadow-primary/20 scale-105"
-                                        : "bg-soft-bg text-secondary hover:bg-gray-200"
+                                    ? "bg-primary text-white shadow-lg shadow-primary/20 scale-105"
+                                    : "bg-soft-bg text-secondary hover:bg-gray-200"
                                     }`}
                             >
                                 {cat}

@@ -142,13 +142,13 @@ export default function Home() {
   return (
     <div className="flex flex-col bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-[75vh] flex items-center pt-12 overflow-hidden">
         {/* Animated Background Blobs */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] -mr-96 -mt-96 animate-pulse" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[100px] -ml-48 -mb-48" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
-          <div className="space-y-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center z-10">
+          <div className="space-y-10 lg:col-span-5">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -162,7 +162,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-5xl sm:text-6xl md:text-8xl font-black text-brand-dark leading-[1] sm:leading-[0.9] tracking-tighter"
+              className="text-4xl sm:text-5xl md:text-6xl font-black text-brand-dark leading-[1] sm:leading-[0.9] tracking-tighter"
             >
               Your Journey, <br />
               <span className="text-primary italic">Our Passion.</span>
@@ -172,7 +172,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-lg sm:text-xl md:text-2xl text-secondary max-w-xl leading-relaxed font-medium"
+              className="text-base sm:text-lg md:text-xl text-secondary max-w-xl leading-relaxed font-medium"
             >
               Escape the ordinary with bespoke itineraries designed by local experts. Every detail handled with premium care.
             </motion.p>
@@ -216,12 +216,12 @@ export default function Home() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            className="relative lg:col-span-7 justify-self-end w-full max-w-2xl"
+            initial={{ opacity: 0, x: 80 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ type: "spring", damping: 15 }}
-            className="relative"
           >
-            <div className="relative z-10 aspect-square md:aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.15)] group">
+            <div className="relative z-10 aspect-[4/5] md:max-h-[580px] rounded-[3rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.15)] group lg:translate-x-12">
               <img
                 src="/images/kashmir.png"
                 alt="Main"
@@ -250,15 +250,15 @@ export default function Home() {
             <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-500/20 rounded-full blur-3xl" />
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* Featured Destinations */}
-      <section className="py-32 relative overflow-hidden">
+      < section className="py-32 relative overflow-hidden" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-8">
             <div className="space-y-4 max-w-2xl">
               <span className="text-primary font-black uppercase tracking-[0.3em] text-[10px] sm:text-xs">Curated Selection</span>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-brand-dark tracking-tighter leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
                 Most Popular <br />
                 <span className="text-primary italic">Global Escapes</span>
               </h2>
@@ -285,10 +285,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Experience Stats & Trust */}
-      <section className="py-24 bg-brand-dark relative overflow-hidden">
+      < section className="py-24 bg-brand-dark relative overflow-hidden" >
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--glass-bg)_1px,_transparent_1px)] bg-[length:40px_40px]" />
         </div>
@@ -296,7 +296,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="space-y-12">
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white leading-[1.1] tracking-tighter">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white leading-[1.1] tracking-tighter">
                 Crafting <span className="text-primary italic">Memories</span> <br />
                 That Last a Lifetime
               </h2>
@@ -317,7 +317,7 @@ export default function Home() {
                       <stat.icon size={20} className="sm:w-6 sm:h-6" />
                     </div>
                     <div>
-                      <div className="text-3xl sm:text-4xl font-black text-white mb-1">{stat.value}</div>
+                      <div className="text-2xl sm:text-3xl font-black text-white mb-1">{stat.value}</div>
                       <div className="text-white/50 text-[10px] sm:text-sm font-bold uppercase tracking-wider">{stat.label}</div>
                     </div>
                   </motion.div>
@@ -347,14 +347,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Testimonials - Rich Carousel Design */}
-      <section className="py-32 bg-soft-bg/30">
+      < section className="py-32 bg-soft-bg/30" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24 max-w-3xl mx-auto space-y-6">
             <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">Testimonials</span>
-            <h2 className="text-5xl md:text-6xl font-black text-brand-dark tracking-tighter italic">Trusted Stories</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tighter italic">Trusted Stories</h2>
             <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
           </div>
 
@@ -371,10 +371,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Premium CTA Block */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8">
+      < section className="py-32 px-4 sm:px-6 lg:px-8" >
         <div className="max-w-7xl mx-auto relative min-h-[400px] sm:min-h-[500px] flex items-center justify-center rounded-[2rem] sm:rounded-[4rem] overflow-hidden group">
           <img
             src="/images/kerala.png"
@@ -388,7 +388,7 @@ export default function Home() {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-3xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter leading-[1.1]"
+              className="text-2xl sm:text-4xl md:text-6xl font-black text-white tracking-tighter leading-[1.1]"
             >
               Don't Just Dream, <br />
               <span className="text-primary italic">Start Your Journey.</span>
@@ -410,10 +410,10 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section >
 
       <Footer />
-    </div>
+    </div >
   );
 }
 

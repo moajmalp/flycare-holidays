@@ -33,7 +33,7 @@ const AboutPage = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-white text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9]"
+                        className="text-white text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-[0.9]"
                     >
                         Pioneering <br />
                         <span className="text-primary italic">Premium Travel</span>
@@ -43,7 +43,7 @@ const AboutPage = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3 }}
-                        className="text-white/80 text-xl md:text-2xl max-w-2xl mx-auto font-medium leading-relaxed"
+                        className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed"
                     >
                         We don't just plan trips; we craft immersive experiences that bridge cultures and create lifelong memories.
                     </motion.p>
@@ -67,12 +67,12 @@ const AboutPage = () => {
                             >
                                 <div className="space-y-4">
                                     <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">Our Heritage</span>
-                                    <h2 className="text-5xl md:text-6xl font-black text-brand-dark tracking-tighter leading-tight">
+                                    <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
                                         Crafting the Art of <br /><span className="text-primary italic">Exploration</span>
                                     </h2>
                                 </div>
 
-                                <div className="space-y-8 text-secondary text-xl leading-relaxed">
+                                <div className="space-y-8 text-secondary text-lg leading-relaxed">
                                     <p className="font-medium">
                                         Founded on the principle that luxury is in the details, Flycare Holidays has redefined what it means to travel with intention.
                                     </p>
@@ -141,7 +141,7 @@ const AboutPage = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-24 space-y-4">
                         <span className="text-primary font-black uppercase tracking-[0.4em] text-xs">Our Foundation</span>
-                        <h2 className="text-5xl md:text-6xl font-black text-white tracking-tighter italic">Values that Move Us</h2>
+                        <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter italic">Values that Move Us</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -163,7 +163,7 @@ const AboutPage = () => {
                                     {value.icon}
                                 </div>
                                 <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">{value.title}</h3>
-                                <p className="text-white/50 leading-relaxed text-lg">{value.desc}</p>
+                                <p className="text-white/50 leading-relaxed text-base">{value.desc}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -173,11 +173,11 @@ const AboutPage = () => {
             {/* CTA Final Block */}
             <section className="py-32 px-4">
                 <div className="max-w-5xl mx-auto text-center space-y-12">
-                    <h2 className="text-5xl md:text-7xl font-black text-brand-dark tracking-tighter leading-[0.9]">
+                    <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter leading-[0.9]">
                         Ready to Begin Your <br />
                         <span className="text-primary italic">Next Chapter?</span>
                     </h2>
-                    <p className="text-secondary text-xl md:text-2xl font-medium max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-secondary text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
                         Join thousands of travelers who have found their passion for exploration with Flycare Holidays.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">

@@ -28,7 +28,7 @@ const ContactPage = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-8 leading-[0.9]"
+                        className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 leading-[0.9]"
                     >
                         Let's Talk <br />
                         <span className="text-primary italic">Adventure</span>
@@ -38,7 +38,7 @@ const ContactPage = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="text-white/60 text-xl md:text-2xl max-w-2xl mx-auto font-medium leading-relaxed"
+                        className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed"
                     >
                         Ready to start your journey? Our travel specialists are standing by to help you craft the perfect escape.
                     </motion.p>
@@ -52,7 +52,7 @@ const ContactPage = () => {
                         <div className="space-y-12">
                             <div className="space-y-4">
                                 <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">Reach Out</span>
-                                <h2 className="text-5xl font-black text-brand-dark tracking-tighter">Contact Details</h2>
+                                <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter">Contact Details</h2>
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

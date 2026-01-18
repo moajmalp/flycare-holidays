@@ -90,7 +90,7 @@ const DestinationsPage = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-6xl md:text-8xl font-black text-brand-dark tracking-tighter mb-8 leading-[0.9]"
+                        className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter mb-8 leading-[0.9]"
                     >
                         Where to <br />
                         <span className="text-primary italic">Adventure Next?</span>
@@ -100,7 +100,7 @@ const DestinationsPage = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="text-secondary text-xl md:text-2xl max-w-2xl mx-auto font-medium leading-relaxed mb-12"
+                        className="text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed mb-12"
                     >
                         From the silent peaks of Himalayas to the vibrant soul of Southeast Asia, find your next story here.
                     </motion.p>
@@ -182,7 +182,7 @@ const DestinationsPage = () => {
                             <div className="space-y-10">
                                 <div className="space-y-4">
                                     <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">Signature Collection</span>
-                                    <h2 className="text-5xl md:text-6xl font-black text-brand-dark tracking-tighter leading-tight">
+                                    <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
                                         Limited Edition <br /><span className="text-primary italic">Global Retreats</span>
                                     </h2>
                                 </div>

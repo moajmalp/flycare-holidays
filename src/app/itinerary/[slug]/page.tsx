@@ -40,7 +40,7 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.1 }}
-                                    className="text-brand-dark text-5xl md:text-8xl font-black tracking-tighter leading-[0.9]"
+                                    className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter leading-[0.9]"
                                 >
                                     {data.title.split(' ').map((word, i) => (
                                         <span key={i} className={i === 1 ? "text-primary italic block" : ""}>{word} </span>
@@ -50,7 +50,7 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0.2 }}
-                                    className="text-secondary text-xl md:text-2xl font-medium max-w-xl leading-relaxed"
+                                    className="text-lg md:text-xl font-medium max-w-xl leading-relaxed"
                                 >
                                     {data.description}
                                 </motion.p>
@@ -67,21 +67,21 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                         <Clock size={16} />
                                         <span className="text-xs font-black uppercase tracking-widest">Duration</span>
                                     </div>
-                                    <p className="text-brand-dark font-black text-xl">{data.days.length} Days / {data.days.length - 1} Nights</p>
+                                    <p className="text-brand-dark font-black text-lg">{data.days.length} Days / {data.days.length - 1} Nights</p>
                                 </div>
                                 <div className="space-y-1">
                                     <div className="flex items-center gap-2 text-primary">
                                         <Star size={16} fill="currentColor" />
                                         <span className="text-xs font-black uppercase tracking-widest">Experience</span>
                                     </div>
-                                    <p className="text-brand-dark font-black text-xl">Ultra Luxury</p>
+                                    <p className="text-brand-dark font-black text-lg">Ultra Luxury</p>
                                 </div>
                                 <div className="space-y-1">
                                     <div className="flex items-center gap-2 text-primary">
                                         <MapPin size={16} />
                                         <span className="text-xs font-black uppercase tracking-widest">Start City</span>
                                     </div>
-                                    <p className="text-brand-dark font-black text-xl">Srinagar</p>
+                                    <p className="text-brand-dark font-black text-lg">Srinagar</p>
                                 </div>
                             </motion.div>
                         </div>
@@ -106,7 +106,7 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                         <div className="lg:col-span-8 space-y-24">
                             <div className="space-y-4">
                                 <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">The Journey</span>
-                                <h2 className="text-5xl font-black text-brand-dark tracking-tighter italic">Day by Day</h2>
+                                <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter italic">Day by Day</h2>
                             </div>
 
                             <div className="relative">
@@ -169,7 +169,7 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                     <div className="relative z-10 space-y-8 text-center">
                                         <div className="space-y-2">
                                             <span className="text-primary font-black uppercase tracking-[0.2em] text-xs">starting from</span>
-                                            <div className="text-6xl font-black text-white tracking-tighter">₹12,499</div>
+                                            <div className="text-4xl md:text-5xl font-black text-white tracking-tighter">₹12,499</div>
                                             <span className="text-white/40 font-bold block">per person / twin sharing</span>
                                         </div>
 
@@ -221,7 +221,7 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                 <div className="max-w-7xl mx-auto rounded-[4rem] bg-soft-bg p-12 md:p-24 text-center relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -mr-48 -mt-48" />
                     <div className="relative z-10 space-y-12">
-                        <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter leading-tight max-w-3xl mx-auto">
+                        <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight max-w-3xl mx-auto">
                             Don't just witness the beauty, <span className="text-primary italic">Live It.</span>
                         </h2>
                         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
