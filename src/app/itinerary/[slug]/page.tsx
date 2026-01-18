@@ -7,8 +7,9 @@ import { motion } from "framer-motion";
 import { itineraryData, defaultItinerary } from "@/data/itinerary-data";
 import Footer from "@/components/Footer";
 
-const ItineraryPage = ({ params }: { params: { slug: string } }) => {
-    const data = itineraryData[params.slug] || defaultItinerary;
+const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
+    const { slug } = React.use(params);
+    const data = itineraryData[slug] || defaultItinerary;
 
     return (
         <div className="bg-white min-h-screen">

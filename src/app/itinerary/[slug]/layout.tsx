@@ -2,11 +2,12 @@ import { Metadata } from 'next';
 import { itineraryData, defaultItinerary } from '@/data/itinerary-data';
 
 type Props = {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const data = itineraryData[params.slug] || defaultItinerary;
+    const { slug } = await params;
+    const data = itineraryData[slug] || defaultItinerary;
 
     return {
         title: `${data.title} | Flycare Holidays`,
