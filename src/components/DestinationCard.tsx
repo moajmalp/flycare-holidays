@@ -1,7 +1,9 @@
+"use client";
+
 import React from "react";
-// import Image from "next/image"; // Removed to avoid build errors
-import { Star, MapPin, ChevronRight } from "lucide-react";
+import { Star, MapPin, ArrowUpRight, Clock } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface DestinationCardProps {
     image: string;
@@ -25,51 +27,76 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
     slug,
 }) => {
     return (
-        <div className="bg-white rounded-[32px] overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl group flex flex-col h-full">
-            {/* Image Section */}
-            <div className="relative h-72 w-full overflow-hidden">
+        <motion.div
+            whileHover={{ y: -10 }}
+            className="group relative bg-white rounded-[2.5rem] overflow-hidden border border-gray-100 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex flex-col h-full"
+        >
+            {/* Image Wrapper */}
+            <div className="relative aspect-[4/5] overflow-hidden">
                 <img
                     src={image}
                     alt={title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
-                {/* Price Tag */}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm">
-                    <span className="text-[10px] text-secondary font-bold mr-1">starts at</span>
-                    <span className="text-sm font-black text-primary">₱{price}</span>
-                </div>
-            </div>
 
-            {/* Content Section */}
-            <div className="p-6 flex flex-col flex-grow">
-                <div className="flex flex-col mb-4">
-                    <h3 className="text-xl font-bold text-brand-dark mb-1">{title}</h3>
-                    <div className="flex items-center gap-2">
-                        <p className="text-xs font-medium text-secondary">{subtitle}</p>
-                        <span className="text-gray-300">|</span>
-                        <div className="flex items-center gap-1">
-                            <Star size={12} className="text-primary fill-primary" />
-                            <span className="text-xs font-bold text-brand-dark">{rating}</span>
-                            <span className="text-[10px] text-gray-400">({reviews})</span>
+                {/* Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/60 via-transparent to-transparent opacity-60" />
+
+                {/* Top Badge */}
+                <div className="absolute top-6 left-6 flex gap-2">
+                    <div className="glass-effect px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg border-white/20">
+                        <Star size={12} className="text-primary fill-primary" />
+                        <span className="text-[10px] font-black text-white">{rating}</span>
+                    </div>
+                </div>
+
+                {/* Bottom Content on Image */}
+                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
+                    <div className="glass-effect p-4 sm:p-5 rounded-xl sm:rounded-2xl border-white/20 backdrop-blur-md translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <div className="flex justify-between items-end gap-2">
+                            <div className="space-y-1 min-w-0">
+                                <div className="flex items-center gap-1.5 text-white/70">
+                                    <MapPin size={10} className="text-primary sm:w-3 sm:h-3" />
+                                    <span className="text-[8px] sm:text-[10px] font-bold uppercase tracking-widest truncate">{location}</span>
+                                </div>
+                                <h3 className="text-lg sm:text-xl font-black text-white tracking-tight truncate">{title}</h3>
+                            </div>
+                            <div className="text-right flex-shrink-0">
+                                <span className="block text-[7px] sm:text-[8px] font-black text-white/50 uppercase tracking-widest mb-0.5">Starting at</span>
+                                <span className="text-base sm:text-lg font-black text-primary italic">₹{price}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                {/* Location */}
-                <div className="mt-auto flex items-center justify-between">
-                    <div className="flex items-center gap-1.5 text-secondary">
-                        <MapPin size={14} className="text-primary" />
-                        <span className="text-[11px] font-medium">{location}</span>
+            {/* Bottom Reveal Section */}
+            <div className="p-8 flex flex-col flex-grow bg-white">
+                <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2 text-secondary">
+                        <Clock size={14} className="text-primary" />
+                        <span className="text-xs font-bold">{subtitle}</span>
                     </div>
+                    <div className="text-[10px] font-black text-primary/40 uppercase tracking-widest">Premium Luxury</div>
+                </div>
+
+                <p className="text-secondary text-sm leading-relaxed line-clamp-2 font-medium mb-6">
+                    Experience the mystical beauty of {title} with our handpicked luxury stays and private guides.
+                </p>
+
+                <div className="mt-auto">
                     <Link
                         href={`/itinerary/${slug}`}
-                        className="inline-flex items-center justify-center w-10 h-10 bg-primary text-white rounded-full hover:scale-110 transition-transform duration-300 shadow-md shadow-primary/20 group-hover:rotate-45"
+                        className="w-full h-14 rounded-2xl bg-soft-bg border border-gray-100 flex items-center justify-center gap-2 group/btn hover:bg-primary transition-all duration-300"
                     >
-                        <ChevronRight size={18} />
+                        <span className="text-sm font-black text-brand-dark uppercase tracking-widest group-hover/btn:text-white transition-colors">View Itinerary</span>
+                        <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-dark group-hover/btn:scale-110 transition-transform">
+                            <ArrowUpRight size={16} />
+                        </div>
                     </Link>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

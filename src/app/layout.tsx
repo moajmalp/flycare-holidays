@@ -34,6 +34,10 @@ export const metadata: Metadata = {
     title: "Flycare Holidays",
     description: "Modern travel agency for your dream vacations.",
   },
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -42,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased pt-20`}
       >

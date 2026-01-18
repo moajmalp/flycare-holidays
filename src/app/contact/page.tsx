@@ -3,127 +3,155 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
-import { Mail, Phone, MapPin, MessageCircle, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Clock, Send, Compass, Headphones } from "lucide-react";
 
 const ContactPage = () => {
     return (
         <div className="bg-white min-h-screen">
-            {/* Header */}
-            <section className="pt-40 pb-20 bg-brand-dark text-white rounded-b-[64px]">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            {/* Hero Section */}
+            <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark">
+                {/* Animated Background Elements */}
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] -mr-96 -mt-96 animate-pulse" />
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] -ml-48 -mb-48" />
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect text-primary font-bold text-sm tracking-widest uppercase mb-8"
+                    >
+                        <Headphones size={16} />
+                        24/7 Global Support
+                    </motion.div>
+
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl md:text-7xl font-black tracking-tighter mb-6"
+                        transition={{ delay: 0.1 }}
+                        className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-8 leading-[0.9]"
                     >
-                        Get in <span className="text-primary italic">Touch</span>
+                        Let's Talk <br />
+                        <span className="text-primary italic">Adventure</span>
                     </motion.h1>
+
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-medium"
+                        className="text-white/60 text-xl md:text-2xl max-w-2xl mx-auto font-medium leading-relaxed"
                     >
-                        We're here to help you plan your dream vacation. Reach out to us via any of the channels below.
+                        Ready to start your journey? Our travel specialists are standing by to help you craft the perfect escape.
                     </motion.p>
                 </div>
             </section>
 
-            <section className="py-32">
+            <section className="py-32 relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
-                        {/* Contact Info */}
-                        <div>
-                            <h2 className="text-4xl font-black text-brand-dark tracking-tighter mb-12">Contact Details</h2>
-                            <div className="space-y-12">
-                                <div className="flex items-start gap-8 group">
-                                    <div className="w-16 h-16 rounded-[24px] bg-soft-bg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
-                                        <MapPin size={28} />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-xl font-bold text-brand-dark mb-2">Our Office</h4>
-                                        <p className="text-secondary text-lg leading-relaxed">123 Travel Street, Holiday City,<br />HC 12345, India</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start gap-8 group">
-                                    <div className="w-16 h-16 rounded-[24px] bg-soft-bg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
-                                        <Phone size={28} />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-xl font-bold text-brand-dark mb-2">Call Us</h4>
-                                        <p className="text-secondary text-lg leading-relaxed">+91 98765 43210</p>
-                                        <p className="text-secondary text-lg leading-relaxed">+91 11223 34455</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start gap-8 group">
-                                    <div className="w-16 h-16 rounded-[24px] bg-soft-bg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
-                                        <Mail size={28} />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-xl font-bold text-brand-dark mb-2">Email Us</h4>
-                                        <p className="text-secondary text-lg leading-relaxed">hello@flycareholidays.com</p>
-                                        <p className="text-secondary text-lg leading-relaxed">support@flycareholidays.com</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start gap-8 group">
-                                    <div className="w-16 h-16 rounded-[24px] bg-soft-bg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
-                                        <Clock size={28} />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-xl font-bold text-brand-dark mb-2">Working Hours</h4>
-                                        <p className="text-secondary text-lg leading-relaxed">Monday - Saturday: 9:00 AM - 7:00 PM</p>
-                                        <p className="text-secondary text-lg leading-relaxed">Sunday: Closed</p>
-                                    </div>
-                                </div>
+                        {/* Contact Info - Glass Cards */}
+                        <div className="space-y-12">
+                            <div className="space-y-4">
+                                <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">Reach Out</span>
+                                <h2 className="text-5xl font-black text-brand-dark tracking-tighter">Contact Details</h2>
                             </div>
 
-                            <div className="mt-16 p-8 bg-primary/10 rounded-[32px] border border-primary/20 flex items-center gap-6">
-                                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white">
-                                    <MessageCircle size={24} />
-                                </div>
-                                <div>
-                                    <p className="text-brand-dark font-black tracking-tight">Need instant help?</p>
-                                    <p className="text-primary font-bold">Chat with our experts on WhatsApp</p>
-                                </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                {[
+                                    { icon: MapPin, title: "Our Office", content: "123 Travel Street, Holiday City, HC 12345, India", color: "text-primary", bg: "bg-primary/10" },
+                                    { icon: Phone, title: "Call Us", content: "+91 98765 43210 / +91 11223 34455", color: "text-blue-500", bg: "bg-blue-500/10" },
+                                    { icon: Mail, title: "Email Us", content: "hello@flycareholidays.com / support@flycareholidays.com", color: "text-primary", bg: "bg-primary/10" },
+                                    { icon: Clock, title: "Working Hours", content: "Mon - Sat: 9:00 AM - 7:00 PM (Sun: Closed)", color: "text-blue-500", bg: "bg-blue-500/10" }
+                                ].map((item, i) => (
+                                    <motion.div
+                                        key={i}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: i * 0.1 }}
+                                        className="p-8 rounded-[2.5rem] bg-soft-bg/50 border border-gray-100 hover:border-primary/30 hover:bg-white hover:shadow-xl transition-all duration-500 group"
+                                    >
+                                        <div className={`w-14 h-14 rounded-2xl ${item.bg} flex items-center justify-center ${item.color} mb-6 group-hover:scale-110 transition-transform`}>
+                                            <item.icon size={28} />
+                                        </div>
+                                        <h4 className="text-xl font-bold text-brand-dark mb-2">{item.title}</h4>
+                                        <p className="text-secondary leading-relaxed font-medium">{item.content}</p>
+                                    </motion.div>
+                                ))}
                             </div>
+
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                className="p-10 rounded-[3rem] glass-effect border-primary/20 flex flex-col sm:flex-row items-center gap-8 shadow-2xl shadow-primary/10"
+                            >
+                                <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-white shrink-0 animate-bounce">
+                                    <MessageCircle size={36} fill="currentColor" />
+                                </div>
+                                <div className="text-center sm:text-left">
+                                    <p className="text-brand-dark text-xl font-black tracking-tight mb-1">Need instant assistance?</p>
+                                    <p className="text-primary text-lg font-bold">Chat with our experts on WhatsApp</p>
+                                    <a href="https://wa.me/919876543210" className="inline-block mt-4 text-brand-dark font-black hover:text-primary transition-colors">Start Chat Now →</a>
+                                </div>
+                            </motion.div>
                         </div>
 
-                        {/* Inquiry Form */}
-                        <div className="bg-white p-12 md:p-16 rounded-[56px] shadow-2xl shadow-brand-dark/5 border border-gray-50">
-                            <h2 className="text-3xl font-black text-brand-dark tracking-tighter mb-8">Send an Inquiry</h2>
-                            <form className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-bold text-brand-dark ml-2">Full Name</label>
-                                        <input type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-soft-bg rounded-2xl border-none focus:ring-2 focus:ring-primary/20 outline-none" />
+                        {/* Inquiry Form - Rich Design */}
+                        <div className="relative">
+                            <div className="absolute -inset-4 bg-primary/10 rounded-[4rem] blur-3xl -z-10" />
+                            <motion.div
+                                initial={{ opacity: 0, x: 30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                className="bg-white p-12 md:p-16 rounded-[4rem] shadow-2xl shadow-brand-dark/5 border border-gray-50"
+                            >
+                                <h2 className="text-3xl font-black text-brand-dark tracking-tighter mb-8 italic">Send an Inquiry</h2>
+                                <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div className="space-y-3">
+                                            <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary ml-2">Full Name</label>
+                                            <input
+                                                type="text"
+                                                placeholder="John Doe"
+                                                className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark outline-none"
+                                            />
+                                        </div>
+                                        <div className="space-y-3">
+                                            <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary ml-2">Email Address</label>
+                                            <input
+                                                type="email"
+                                                placeholder="john@example.com"
+                                                className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark outline-none"
+                                            />
+                                        </div>
                                     </div>
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-bold text-brand-dark ml-2">Email Address</label>
-                                        <input type="email" placeholder="john@example.com" className="w-full px-6 py-4 bg-soft-bg rounded-2xl border-none focus:ring-2 focus:ring-primary/20 outline-none" />
+                                    <div className="space-y-3">
+                                        <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary ml-2">Destination of Interest</label>
+                                        <div className="relative">
+                                            <select className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark outline-none appearance-none cursor-pointer">
+                                                <option>Select a destination</option>
+                                                <option>Amazing Kashmir</option>
+                                                <option>Mesmerizing Manali</option>
+                                                <option>Kerala Delight</option>
+                                                <option>Vietnam Adventure</option>
+                                                <option>Other</option>
+                                            </select>
+                                            <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-primary">
+                                                <Compass size={20} />
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-brand-dark ml-2">Destination of Interest</label>
-                                    <select className="w-full px-6 py-4 bg-soft-bg rounded-2xl border-none focus:ring-2 focus:ring-primary/20 outline-none appearance-none">
-                                        <option>Select a destination</option>
-                                        <option>Amazing Kashmir</option>
-                                        <option>Mesmerizing Manali</option>
-                                        <option>Kerala Delight</option>
-                                        <option>Vietnam Adventure</option>
-                                        <option>Other</option>
-                                    </select>
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-brand-dark ml-2">Special Requirements</label>
-                                    <textarea placeholder="Tell us about your dream trip..." rows={5} className="w-full px-6 py-4 bg-soft-bg rounded-2xl border-none focus:ring-2 focus:ring-primary/20 outline-none resize-none"></textarea>
-                                </div>
-                                <button className="btn-primary w-full py-5 rounded-2xl font-black uppercase tracking-[0.2em] shadow-lg shadow-primary/20">
-                                    Send Inquiry
-                                </button>
-                            </form>
+                                    <div className="space-y-3">
+                                        <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary ml-2">Special Requirements</label>
+                                        <textarea
+                                            placeholder="Tell us about your dream trip..."
+                                            rows={5}
+                                            className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark outline-none resize-none"
+                                        ></textarea>
+                                    </div>
+                                    <button className="btn-primary w-full py-6 rounded-2xl font-black uppercase tracking-[0.3em] shadow-2xl shadow-primary/30 group">
+                                        Send Inquiry
+                                        <Send size={20} className="ml-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                    </button>
+                                </form>
+                            </motion.div>
                         </div>
                     </div>
                 </div>

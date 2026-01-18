@@ -1,13 +1,15 @@
 "use client";
 
-import React from "react";
-// import Image from "next/image";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import DestinationCard from "@/components/DestinationCard";
 import PackageCard from "@/components/PackageCard";
 import Footer from "@/components/Footer";
+import { Sparkles, MapPin, Search, Filter, Globe, Compass, ArrowRight, ArrowUpRight } from "lucide-react";
 
 const DestinationsPage = () => {
+    const [searchQuery, setSearchQuery] = useState("");
+
     const destinations = [
         {
             title: "Amazing Kashmir",
@@ -61,84 +63,161 @@ const DestinationsPage = () => {
         }
     ];
 
+    const filteredDestinations = destinations.filter(dest =>
+        dest.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        dest.location.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     return (
         <div className="bg-white min-h-screen">
-            {/* Header */}
-            <section className="pt-40 pb-20 bg-soft-bg">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            {/* Header / Hero Section */}
+            <section className="relative pt-48 pb-32 overflow-hidden">
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] -mr-96 -mt-96" />
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[100px] -ml-48 -mb-48" />
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect text-primary font-bold text-sm tracking-widest uppercase mb-8"
+                    >
+                        <Compass size={16} />
+                        Curated Global Collections
+                    </motion.div>
+
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl md:text-7xl font-black text-brand-dark tracking-tighter mb-6"
+                        transition={{ delay: 0.1 }}
+                        className="text-6xl md:text-8xl font-black text-brand-dark tracking-tighter mb-8 leading-[0.9]"
                     >
-                        Explore <span className="text-primary italic">Destinations</span>
+                        Where to <br />
+                        <span className="text-primary italic">Adventure Next?</span>
                     </motion.h1>
+
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="text-secondary text-lg md:text-xl max-w-2xl mx-auto font-medium"
+                        className="text-secondary text-xl md:text-2xl max-w-2xl mx-auto font-medium leading-relaxed mb-12"
                     >
-                        From snow-capped mountains to serene backwaters, find your perfect escape from our curated collection of destinations.
+                        From the silent peaks of Himalayas to the vibrant soul of Southeast Asia, find your next story here.
                     </motion.p>
-                </div>
-            </section>
 
-            {/* Grid */}
-            <section className="py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                        {destinations.map((dest, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                            >
-                                <DestinationCard {...dest} />
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Featured Packages */}
-            <section className="py-24 bg-brand-dark text-white rounded-[64px] mx-4 md:mx-8 mb-24 overflow-hidden relative">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-                        <div>
-                            <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6">
-                                Featured <span className="text-primary italic">Tour Packages</span>
-                            </h2>
-                            <p className="text-gray-400 text-lg max-w-xl">
-                                Hand-picked experiences designed for the ultra-premium traveler.
-                            </p>
+                    {/* Rich Search Bar */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="max-w-2xl mx-auto relative group"
+                    >
+                        <div className="absolute inset-0 bg-primary/20 rounded-[2rem] blur-2xl opacity-0 group-focus-within:opacity-100 transition-opacity" />
+                        <div className="relative glass-effect p-2 rounded-[2rem] flex items-center border-white/40 shadow-xl">
+                            <div className="pl-6 text-secondary">
+                                <Search size={24} />
+                            </div>
+                            <input
+                                type="text"
+                                placeholder="Search by city, region or country..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                className="w-full bg-transparent border-none focus:ring-0 text-brand-dark font-bold text-lg px-4 placeholder:text-secondary/50 placeholder:font-medium"
+                            />
+                            <button className="btn-primary py-4 px-8 rounded-[1.5rem] flex items-center gap-2">
+                                <Filter size={18} />
+                                <span className="hidden sm:inline">Filters</span>
+                            </button>
                         </div>
-                    </div>
+                    </motion.div>
+                </div>
+            </section>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <PackageCard
-                            title="Royal Rajasthan Experience"
-                            price="85,000"
-                            date="8 Days"
-                            location="Rajasthan, India"
-                            image="/images/agra.png"
-                        />
-                        <PackageCard
-                            title="Bali Island Escape"
-                            price="95,000"
-                            date="6 Days"
-                            location="Bali, Indonesia"
-                            image="/images/vietnam.png"
-                        />
-                        <PackageCard
-                            title="Dubai Luxury Getaway"
-                            price="1,20,000"
-                            date="5 Days"
-                            location="Dubai, UAE"
-                            image="/images/kashmir.png"
-                        />
+            {/* Destinations Grid */}
+            <section className="py-24 relative">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <AnimatePresence mode="popLayout">
+                        {filteredDestinations.length > 0 ? (
+                            <motion.div
+                                layout
+                                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
+                            >
+                                {filteredDestinations.map((dest, i) => (
+                                    <motion.div
+                                        key={dest.title}
+                                        layout
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.9 }}
+                                        transition={{ delay: i * 0.05 }}
+                                    >
+                                        <DestinationCard {...dest} />
+                                    </motion.div>
+                                ))}
+                            </motion.div>
+                        ) : (
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                className="text-center py-20"
+                            >
+                                <div className="w-24 h-24 bg-soft-bg rounded-full flex items-center justify-center mx-auto mb-6 text-secondary">
+                                    <Globe size={48} />
+                                </div>
+                                <h3 className="text-2xl font-bold text-brand-dark mb-2">No matching destinations found</h3>
+                                <p className="text-secondary">Try searching for something else or browse all locations.</p>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </div>
+            </section>
+
+            {/* Premium Package Highlight */}
+            <section className="py-32 relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="glass-effect rounded-[4rem] p-12 md:p-24 border-white/20 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -mr-48 -mt-48" />
+
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+                            <div className="space-y-10">
+                                <div className="space-y-4">
+                                    <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">Signature Collection</span>
+                                    <h2 className="text-5xl md:text-6xl font-black text-brand-dark tracking-tighter leading-tight">
+                                        Limited Edition <br /><span className="text-primary italic">Global Retreats</span>
+                                    </h2>
+                                </div>
+                                <p className="text-secondary text-xl leading-relaxed font-medium">
+                                    Discover our hand-picked experiences designed for the ultra-premium traveler. Minimal groups, maximum soul.
+                                </p>
+                                <div className="flex gap-4">
+                                    <div className="flex items-center gap-2 px-4 py-2 bg-white/50 rounded-full text-secondary font-bold text-sm">
+                                        <Sparkles size={16} className="text-primary" />
+                                        Private Guided
+                                    </div>
+                                    <div className="flex items-center gap-2 px-4 py-2 bg-white/50 rounded-full text-secondary font-bold text-sm">
+                                        <MapPin size={16} className="text-primary" />
+                                        Luxury Stay
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 gap-6">
+                                <PackageCard
+                                    title="Royal Rajasthan Experience"
+                                    price="85,000"
+                                    date="8 Days / 7 Nights"
+                                    location="Rajasthan, India"
+                                    image="/images/agra.png"
+                                />
+                                <div className="text-right">
+                                    <Link href="/contact" className="group inline-flex items-center gap-3 text-lg font-bold text-brand-dark hover:text-primary transition-colors">
+                                        Request Custom Itinerary
+                                        <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/5 transition-all">
+                                            <ArrowUpRight size={20} />
+                                        </div>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -149,3 +228,4 @@ const DestinationsPage = () => {
 };
 
 export default DestinationsPage;
+

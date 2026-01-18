@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
-// import Image from "next/image";
-import { Calendar, MapPin, Tag } from "lucide-react";
+import { Calendar, MapPin, Tag, ArrowUpRight, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface PackageCardProps {
     image: string;
@@ -18,46 +20,80 @@ const PackageCard: React.FC<PackageCardProps> = ({
     price,
 }) => {
     return (
-        <div className="flex flex-col sm:flex-row gap-6 p-5 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
-            {/* Thumbnail */}
-            <div className="relative w-full sm:w-48 h-48 flex-shrink-0 overflow-hidden rounded-2xl">
+        <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="group flex flex-col md:flex-row gap-8 p-6 bg-white/50 backdrop-blur-xl rounded-[3rem] border border-gray-100 hover:border-primary/20 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 shadow-sm"
+        >
+            {/* Thumbnail Wrapper */}
+            <div className="relative w-full md:w-56 h-56 flex-shrink-0 overflow-hidden rounded-[2rem] shadow-lg">
                 <img
                     src={image}
                     alt={title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent" />
+
+                {/* Floating Badge on Image */}
+                <div className="absolute top-4 left-4">
+                    <div className="glass-effect px-3 py-1.5 rounded-full flex items-center gap-2 border-white/20">
+                        <Sparkles size={12} className="text-primary" />
+                        <span className="text-[10px] font-black text-white uppercase tracking-widest">Trending</span>
+                    </div>
+                </div>
             </div>
 
-            {/* Details */}
-            <div className="flex flex-col justify-center flex-grow py-2">
-                <div className="flex items-center gap-2 mb-3">
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-[10px] font-black rounded-full uppercase tracking-wider">
-                        Limited Time
+            {/* Content Details */}
+            <div className="flex flex-col justify-center flex-grow space-y-4 sm:space-y-6">
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                    <span className="px-3 sm:px-4 py-1.5 bg-primary/10 text-primary text-[9px] sm:text-[10px] font-black rounded-full uppercase tracking-[0.2em]">
+                        Exclusive Deal
                     </span>
                     {price && (
-                        <div className="flex items-center gap-1 text-primary">
-                            <Tag size={12} fill="currentColor" />
-                            <span className="text-xs font-bold">from ₱{price}</span>
+                        <div className="flex items-center gap-2 group-hover:scale-105 transition-transform">
+                            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-soft-bg flex items-center justify-center text-primary">
+                                <Tag size={12} className="sm:w-3.5 sm:h-3.5" fill="currentColor" />
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-[7px] sm:text-[8px] font-black text-secondary uppercase tracking-[0.2em] -mb-1">From</span>
+                                <span className="text-base sm:text-lg font-black text-brand-dark italic">₹{price}</span>
+                            </div>
                         </div>
                     )}
                 </div>
 
-                <h4 className="text-xl font-bold text-brand-dark mb-4 leading-tight group-hover:text-primary transition-colors">
+                <h4 className="text-xl sm:text-2xl md:text-3xl font-black text-brand-dark leading-tight group-hover:text-primary transition-colors tracking-tight">
                     {title}
                 </h4>
 
-                <div className="flex flex-wrap gap-6 text-sm text-secondary">
-                    <div className="flex items-center gap-2">
-                        <Calendar size={16} className="text-primary" />
-                        <span className="font-medium">{date}</span>
+                <div className="flex flex-wrap gap-4 sm:gap-8">
+                    <div className="flex items-center gap-2 sm:gap-3">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-soft-bg flex items-center justify-center text-primary">
+                            <Calendar size={16} className="sm:w-4.5 sm:h-4.5" />
+                        </div>
+                        <div className="flex flex-col">
+                            <span className="text-[7px] sm:text-[8px] font-black text-secondary uppercase tracking-[0.2em] -mb-0.5">Duration</span>
+                            <span className="font-bold text-brand-dark text-xs sm:text-sm">{date}</span>
+                        </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                        <MapPin size={16} className="text-primary" />
-                        <span className="font-medium">{location}</span>
+                    <div className="flex items-center gap-2 sm:gap-3">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-soft-bg flex items-center justify-center text-primary">
+                            <MapPin size={16} className="sm:w-4.5 sm:h-4.5" />
+                        </div>
+                        <div className="flex flex-col">
+                            <span className="text-[7px] sm:text-[8px] font-black text-secondary uppercase tracking-[0.2em] -mb-0.5">Location</span>
+                            <span className="font-bold text-brand-dark text-xs sm:text-sm">{location}</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            {/* Action Icon */}
+            <div className="flex md:flex flex-col justify-center items-center md:px-4 mt-4 md:mt-0">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-soft-bg flex items-center justify-center text-brand-dark group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-500 shadow-sm">
+                    <ArrowUpRight size={20} className="sm:w-6 sm:h-6" />
+                </div>
+            </div>
+        </motion.div>
     );
 };
 

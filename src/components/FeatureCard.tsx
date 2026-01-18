@@ -2,6 +2,7 @@
 
 import React from "react";
 import { LucideIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface FeatureCardProps {
     icon: LucideIcon;
@@ -11,15 +12,18 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, description }) => {
     return (
-        <div className="flex items-start gap-4 p-6 bg-soft-bg rounded-2xl transition-all duration-300 hover:bg-gray-100 group">
-            <div className="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Icon className="text-primary w-6 h-6" />
+        <motion.div
+            whileHover={{ y: -5 }}
+            className="flex flex-col gap-6 p-10 bg-white/50 backdrop-blur-xl rounded-[2.5rem] border border-gray-100 hover:border-primary/20 hover:bg-white transition-all duration-500 group shadow-sm hover:shadow-2xl hover:shadow-primary/5"
+        >
+            <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/10">
+                <Icon size={32} />
             </div>
-            <div>
-                <h3 className="text-lg font-bold text-brand-dark mb-1">{title}</h3>
-                <p className="text-sm text-secondary leading-relaxed">{description}</p>
+            <div className="space-y-3">
+                <h3 className="text-2xl font-black text-brand-dark tracking-tight">{title}</h3>
+                <p className="text-secondary text-lg leading-relaxed font-medium">{description}</p>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
