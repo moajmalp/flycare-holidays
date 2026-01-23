@@ -23,7 +23,6 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
     subtitle,
     price,
     rating,
-    reviews,
     location,
     slug,
 }) => {

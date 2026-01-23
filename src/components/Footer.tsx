@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Instagram, Facebook, MessageCircle, Mail, Phone, MapPin, Send, ArrowUpRight } from "lucide-react";
+import { Instagram, Facebook, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
 
 const Footer = () => {
@@ -62,7 +62,7 @@ const Footer = () => {
                             </div>
                         </Link>
                         <p className="text-gray-400 text-base sm:text-lg leading-relaxed font-medium">
-                            Redefining luxury travel experiences. We don't just plan trips; we craft lifelong memories with care and precision.
+                            Redefining luxury travel experiences. We don&apos;t just plan trips; we craft lifelong memories with care and precision.
                         </p>
                         <div className="flex gap-4">
                             {socialLinks.map((social) => (

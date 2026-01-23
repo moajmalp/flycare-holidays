@@ -57,7 +57,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 )}
 
                 <p className="text-secondary text-xl leading-relaxed mb-10 pb-10 border-b border-gray-100 italic font-medium flex-grow">
-                    "{content}"
+                    &ldquo;{content}&rdquo;
                 </p>
 
                 <div className="flex items-center justify-between">
