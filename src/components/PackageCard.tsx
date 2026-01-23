@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Calendar, MapPin, Tag, ArrowUpRight, Sparkles } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface PackageCardProps {
@@ -26,10 +27,14 @@ const PackageCard: React.FC<PackageCardProps> = ({
         >
             {/* Thumbnail Wrapper */}
             <div className="relative w-full md:w-56 h-56 flex-shrink-0 overflow-hidden rounded-[2rem] shadow-lg">
-                <img
+                <Image
                     src={image}
                     alt={title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, 224px"
+                    loading="lazy"
+                    quality={85}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent" />
 

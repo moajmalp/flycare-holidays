@@ -1,11 +1,34 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { lazy, Suspense } from "react";
 import DestinationCard from "@/components/DestinationCard";
 import FeatureCard from "@/components/FeatureCard";
 import PackageCard from "@/components/PackageCard";
 import TestimonialCard from "@/components/TestimonialCard";
-import Footer from "@/components/Footer";
+
+// Lazy load below-the-fold components for better initial load performance
+const Footer = lazy(() => import("@/components/Footer"));
+
+// Loading fallback component
+const FooterLoader = () => (
+  <footer className="bg-brand-dark text-white pt-24 pb-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="animate-pulse">
+        <div className="h-8 bg-white/10 rounded w-1/4 mb-8"></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="space-y-4">
+              <div className="h-4 bg-white/10 rounded w-3/4"></div>
+              <div className="h-4 bg-white/10 rounded w-1/2"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </footer>
+);
 import {
   Users,
   MapPin,
@@ -201,7 +224,14 @@ export default function Home() {
               <div className="flex -space-x-4">
                 {[1, 2, 3, 4].map(i => (
                   <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-gray-200 overflow-hidden shadow-lg">
-                    <img src={`/images/manali.png`} alt="User" className="w-full h-full object-cover" />
+                    <Image 
+                      src="/images/manali.png" 
+                      alt="User" 
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
                 ))}
                 <div className="w-12 h-12 rounded-full border-2 border-white bg-primary flex items-center justify-center text-white text-xs font-bold shadow-lg">
@@ -222,10 +252,14 @@ export default function Home() {
             transition={{ type: "spring", damping: 15 }}
           >
             <div className="relative z-10 aspect-[4/5] md:max-h-[580px] rounded-[3rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.15)] group lg:translate-x-12">
-              <img
+              <Image
                 src="/images/kashmir.png"
                 alt="Main"
+                width={800}
+                height={1000}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                priority
+                quality={90}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent" />
 
@@ -376,10 +410,13 @@ export default function Home() {
       {/* Premium CTA Block */}
       < section className="py-32 px-4 sm:px-6 lg:px-8" >
         <div className="max-w-7xl mx-auto relative min-h-[400px] sm:min-h-[500px] flex items-center justify-center rounded-[2rem] sm:rounded-[4rem] overflow-hidden group">
-          <img
+          <Image
             src="/images/kerala.png"
             alt="CTA"
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-1000"
+            quality={85}
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-brand-dark/60 backdrop-blur-[1px]" />
           <div className="absolute inset-0 bg-gradient-to-tr from-brand-dark via-transparent to-transparent opacity-60" />
@@ -412,7 +449,9 @@ export default function Home() {
         </div>
       </section >
 
-      <Footer />
+      <Suspense fallback={<FooterLoader />}>
+        <Footer />
+      </Suspense>
     </div >
   );
 }

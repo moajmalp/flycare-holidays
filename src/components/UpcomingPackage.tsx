@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface UpcomingPackageProps {
@@ -24,10 +25,14 @@ const UpcomingPackage: React.FC<UpcomingPackageProps> = ({
         >
             {/* Thumbnail */}
             <div className="relative w-28 h-28 flex-shrink-0 overflow-hidden rounded-2xl shadow-md">
-                <img
+                <Image
                     src={image}
                     alt={title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                    sizes="112px"
+                    loading="lazy"
+                    quality={85}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent" />
             </div>

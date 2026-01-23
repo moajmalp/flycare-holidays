@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [destinationsOpen, setDestinationsOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -27,6 +28,15 @@ const Navbar = () => {
     { name: "Gallery", href: "/gallery" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
+  ];
+
+  const destinationOptions = [
+    { name: "Amazing Kashmir", href: "/itinerary/amazing-kashmir" },
+    { name: "Mesmerizing Manali", href: "/itinerary/mesmerizing-manali" },
+    { name: "Kerala Delight", href: "/itinerary/kerala-delight" },
+    { name: "Vietnam Adventure", href: "/itinerary/vietnam-adventure" },
+    { name: "Golden Triangle", href: "/itinerary/golden-triangle" },
+    { name: "View All", href: "/destinations" },
   ];
 
   return (
@@ -58,8 +68,15 @@ const Navbar = () => {
             <ul className="flex items-center gap-1">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
+                const isDestinations = link.name === "Destinations";
+                
                 return (
-                  <li key={link.name}>
+                  <li 
+                    key={link.name}
+                    className="relative"
+                    onMouseEnter={() => isDestinations && setDestinationsOpen(true)}
+                    onMouseLeave={() => isDestinations && setDestinationsOpen(false)}
+                  >
                     <Link
                       href={link.href}
                       className={`relative px-5 py-2 text-sm font-bold transition-all duration-300 rounded-full flex items-center gap-1 ${isActive
@@ -68,8 +85,44 @@ const Navbar = () => {
                         }`}
                     >
                       {link.name}
-                      {link.hasDropdown && <ChevronDown size={14} className="opacity-50" />}
+                      {link.hasDropdown && (
+                        <ChevronDown 
+                          size={14} 
+                          className={`opacity-50 transition-transform duration-300 ${destinationsOpen ? "rotate-180" : ""}`} 
+                        />
+                      )}
                     </Link>
+                    
+                    {/* Destinations Dropdown */}
+                    {isDestinations && (
+                      <AnimatePresence>
+                        {destinationsOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50"
+                            onMouseEnter={() => setDestinationsOpen(true)}
+                            onMouseLeave={() => setDestinationsOpen(false)}
+                          >
+                            <div className="max-h-80 overflow-y-auto custom-scrollbar">
+                              {destinationOptions.map((option, index) => (
+                                <Link
+                                  key={option.name}
+                                  href={option.href}
+                                  className={`block px-6 py-4 text-sm font-bold text-brand-dark hover:bg-primary/10 transition-colors ${
+                                    index === destinationOptions.length - 1 ? "border-t border-gray-100 bg-soft-bg/50" : ""
+                                  }`}
+                                >
+                                  {option.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    )}
                   </li>
                 );
               })}
@@ -111,20 +164,67 @@ const Navbar = () => {
           >
             <div className="glass-effect rounded-[2.5rem] p-6 shadow-2xl border-white/60">
               <div className="flex flex-col gap-2">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`px-6 py-4 rounded-2xl text-lg font-bold transition-all flex items-center justify-between ${pathname === link.href
-                      ? "bg-primary/10 text-primary"
-                      : "text-brand-dark hover:bg-brand-dark/5"
-                      }`}
-                  >
-                    {link.name}
-                    <Globe size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </Link>
-                ))}
+                {navLinks.map((link) => {
+                  const isDestinations = link.name === "Destinations";
+                  return (
+                    <div key={link.name}>
+                      <Link
+                        href={link.href}
+                        onClick={() => {
+                          if (!isDestinations) setIsOpen(false);
+                        }}
+                        className={`px-6 py-4 rounded-2xl text-lg font-bold transition-all flex items-center justify-between ${pathname === link.href
+                          ? "bg-primary/10 text-primary"
+                          : "text-brand-dark hover:bg-brand-dark/5"
+                          }`}
+                      >
+                        {link.name}
+                        {link.hasDropdown ? (
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setDestinationsOpen(!destinationsOpen);
+                            }}
+                            className="text-primary"
+                          >
+                            <ChevronDown 
+                              size={20} 
+                              className={`transition-transform duration-300 ${destinationsOpen ? "rotate-180" : ""}`} 
+                            />
+                          </button>
+                        ) : (
+                          <Globe size={20} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                        )}
+                      </Link>
+                      {isDestinations && (
+                        <AnimatePresence>
+                          {destinationsOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="pl-6 pr-2 py-2 space-y-1">
+                                {destinationOptions.map((option) => (
+                                  <Link
+                                    key={option.name}
+                                    href={option.href}
+                                    onClick={() => setIsOpen(false)}
+                                    className="block px-4 py-3 rounded-xl text-sm font-bold text-brand-dark hover:bg-primary/10 transition-colors"
+                                  >
+                                    {option.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </motion.div>

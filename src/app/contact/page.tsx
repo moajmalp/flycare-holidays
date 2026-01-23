@@ -1,11 +1,37 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
+import Dropdown from "@/components/Dropdown";
+import DatePicker from "@/components/DatePicker";
 import { Mail, Phone, MapPin, MessageCircle, Clock, Send, Compass, Headphones } from "lucide-react";
 
 const ContactPage = () => {
+    const [selectedDestination, setSelectedDestination] = useState("");
+    const [travelDate, setTravelDate] = useState<Date | null>(null);
+    const [returnDate, setReturnDate] = useState<Date | null>(null);
+
+    const destinationOptions = [
+        { value: "", label: "Select a destination" },
+        { value: "kashmir", label: "Amazing Kashmir" },
+        { value: "manali", label: "Mesmerizing Manali" },
+        { value: "kerala", label: "Kerala Delight" },
+        { value: "vietnam", label: "Vietnam Adventure" },
+        { value: "other", label: "Other" },
+    ];
+
+    const minDate = new Date();
+    minDate.setDate(minDate.getDate() + 1); // Tomorrow as minimum date
+
+    const handleTravelDateChange = (date: Date | null) => {
+        setTravelDate(date);
+        // Reset return date if it's before the new travel date
+        if (returnDate && date && returnDate < date) {
+            setReturnDate(null);
+        }
+    };
+
     return (
         <div className="bg-white min-h-screen">
             {/* Hero Section */}
@@ -122,21 +148,29 @@ const ContactPage = () => {
                                             />
                                         </div>
                                     </div>
-                                    <div className="space-y-3">
-                                        <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary ml-2">Destination of Interest</label>
-                                        <div className="relative">
-                                            <select className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark outline-none appearance-none cursor-pointer">
-                                                <option>Select a destination</option>
-                                                <option>Amazing Kashmir</option>
-                                                <option>Mesmerizing Manali</option>
-                                                <option>Kerala Delight</option>
-                                                <option>Vietnam Adventure</option>
-                                                <option>Other</option>
-                                            </select>
-                                            <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-primary">
-                                                <Compass size={20} />
-                                            </div>
-                                        </div>
+                                    <Dropdown
+                                        label="Destination of Interest"
+                                        options={destinationOptions}
+                                        value={selectedDestination}
+                                        onChange={setSelectedDestination}
+                                        placeholder="Select a destination"
+                                        icon={<Compass size={20} />}
+                                    />
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <DatePicker
+                                            label="Travel Date"
+                                            value={travelDate || undefined}
+                                            onChange={handleTravelDateChange}
+                                            placeholder="Select travel date"
+                                            minDate={minDate}
+                                        />
+                                        <DatePicker
+                                            label="Return Date"
+                                            value={returnDate || undefined}
+                                            onChange={setReturnDate}
+                                            placeholder="Select return date"
+                                            minDate={travelDate || minDate}
+                                        />
                                     </div>
                                     <div className="space-y-3">
                                         <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary ml-2">Special Requirements</label>

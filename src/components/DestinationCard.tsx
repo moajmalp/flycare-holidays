@@ -3,6 +3,7 @@
 import React from "react";
 import { Star, MapPin, ArrowUpRight, Clock } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface DestinationCardProps {
@@ -33,10 +34,14 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
         >
             {/* Image Wrapper */}
             <div className="relative aspect-[4/5] overflow-hidden">
-                <img
+                <Image
                     src={image}
                     alt={title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    loading="lazy"
+                    quality={85}
                 />
 
                 {/* Overlays */}

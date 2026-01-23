@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Star, Play, Quote } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface TestimonialCardProps {
@@ -38,10 +39,14 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 {/* Video Placeholder if available */}
                 {videoThumb && (
                     <div className="relative aspect-video mb-8 rounded-[2rem] overflow-hidden bg-gray-100 group/video">
-                        <img
+                        <Image
                             src={videoThumb}
                             alt="Review thumbnail"
-                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/video:scale-110"
+                            fill
+                            className="object-cover transition-transform duration-1000 group-hover/video:scale-110"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                            loading="lazy"
+                            quality={85}
                         />
                         <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover/video:bg-black/40 transition-colors">
                             <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 group-hover/video:scale-110 transition-transform shadow-2xl">
@@ -58,7 +63,14 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-5">
                         <div className="w-14 h-14 rounded-2xl overflow-hidden bg-soft-bg relative border-2 border-primary/10">
-                            <img src={avatar} alt={name} className="absolute inset-0 w-full h-full object-cover" />
+                            <Image 
+                                src={avatar} 
+                                alt={name} 
+                                fill
+                                className="object-cover"
+                                sizes="56px"
+                                loading="lazy"
+                            />
                         </div>
                         <div>
                             <h5 className="text-lg font-black text-brand-dark leading-none pb-1 tracking-tight">{name}</h5>
