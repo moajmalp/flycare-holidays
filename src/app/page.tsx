@@ -4,8 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { lazy, Suspense } from "react";
 import DestinationCard from "@/components/DestinationCard";
-import FeatureCard from "@/components/FeatureCard";
-import PackageCard from "@/components/PackageCard";
 import TestimonialCard from "@/components/TestimonialCard";
 
 // Lazy load below-the-fold components for better initial load performance
@@ -33,15 +31,9 @@ import {
   Users,
   MapPin,
   ShieldCheck,
-  Calendar,
   Headphones,
-  ChevronLeft,
-  ChevronRight,
-  Clock,
   Compass,
   ArrowRight,
-  Send,
-  Plane,
   Star,
   ArrowUpRight,
   Sparkles
@@ -102,22 +94,6 @@ export default function Home() {
     },
   ];
 
-  const upcomingPackages = [
-    {
-      image: "/images/lakshadweep.png",
-      title: "Escape to Lakshadweep: A Serene Island Retreat",
-      date: "Starts Jan 7, 2026",
-      location: "Lakshadweep Islands",
-      price: "24,500",
-    },
-    {
-      image: "/images/agra.png",
-      title: "Delhi-Agra 2 Nights, 3 Days Deluxe Package",
-      date: "Starts Jan 5, 2026",
-      location: "Delhi & Agra",
-      price: "7,800",
-    },
-  ];
 
   const testimonials = [
     {
@@ -274,7 +250,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2 text-white/80 text-sm">
                   <MapPin size={14} />
-                  <span>North India's Paradise</span>
+                  <span>North India&apos;s Paradise</span>
                 </div>
               </div>
             </div>
