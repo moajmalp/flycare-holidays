@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronRight, Calendar, MapPin, Clock, Star, Sparkles, ArrowRight, MessageCircle, Info, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { itineraryData, defaultItinerary } from "@/data/itinerary-data";
@@ -15,10 +16,12 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
         <div className="bg-white min-h-screen">
             {/* Hero Section */}
             <section className="relative h-[80vh] w-full overflow-hidden">
-                <img
+                <Image
                     src={data.headerImage}
                     alt={data.title}
+                    fill
                     className="absolute inset-0 w-full h-full object-cover scale-105"
+                    priority
                 />
                 <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[1px]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
@@ -114,7 +117,7 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                 <div className="absolute left-[23px] top-6 bottom-6 w-1 bg-gradient-to-b from-primary via-primary/20 to-transparent rounded-full" />
 
                                 <div className="space-y-24">
-                                    {data.days.map((dayObj: any, idx: number) => (
+                                    {data.days.map((dayObj, idx) => (
                                         <motion.div
                                             key={idx}
                                             initial={{ opacity: 0, x: -20 }}
@@ -147,8 +150,8 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                                 {/* Visual Accent */}
                                                 <div className="pt-4 flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
                                                     {[1, 2].map(i => (
-                                                        <div key={i} className="min-w-[200px] h-32 rounded-3xl bg-soft-bg overflow-hidden grayscale hover:grayscale-0 transition-all duration-500 border border-gray-100">
-                                                            <img src={data.headerImage} alt="Feature" className="w-full h-full object-cover" />
+                                                        <div key={i} className="min-w-[200px] h-32 relative rounded-3xl bg-soft-bg overflow-hidden grayscale hover:grayscale-0 transition-all duration-500 border border-gray-100">
+                                                            <Image src={data.headerImage} alt="Feature" fill className="object-cover" />
                                                         </div>
                                                     ))}
                                                 </div>
@@ -222,7 +225,7 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                     <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -mr-48 -mt-48" />
                     <div className="relative z-10 space-y-12">
                         <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight max-w-3xl mx-auto">
-                            Don't just witness the beauty, <span className="text-primary italic">Live It.</span>
+                            Don&apos;t just witness the beauty, <span className="text-primary italic">Live It.</span>
                         </h2>
                         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                             <button className="btn-primary py-6 px-12 text-xl shadow-2xl">Download Brouchure</button>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "@/components/Footer";
 import { Maximize2, X, Compass, Sparkles, MapPin, Camera } from "lucide-react";
@@ -103,11 +104,14 @@ const GalleryPage = () => {
                                     className="relative rounded-[3rem] overflow-hidden group cursor-pointer shadow-2xl border border-gray-100"
                                     onClick={() => setSelectedImg(img)}
                                 >
-                                    <img
-                                        src={img.src}
-                                        alt={img.alt}
-                                        className="w-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                                    />
+                                    <div className="relative aspect-video">
+                                        <Image
+                                            src={img.src}
+                                            alt={img.alt}
+                                            fill
+                                            className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                                        />
+                                    </div>
 
                                     {/* Hover Overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-10">
@@ -151,10 +155,11 @@ const GalleryPage = () => {
                             className="relative max-w-6xl w-full aspect-video rounded-[3rem] overflow-hidden shadow-[0_0_100px_rgba(255,153,51,0.2)]"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <img
+                            <Image
                                 src={selectedImg.src}
                                 alt={selectedImg.alt}
-                                className="w-full h-full object-cover"
+                                fill
+                                className="object-cover"
                             />
                             <div className="absolute bottom-10 left-10 right-10 glass-effect p-8 rounded-3xl border-white/20">
                                 <h3 className="text-white text-3xl font-black mb-2">{selectedImg.alt}</h3>

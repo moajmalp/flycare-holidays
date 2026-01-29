@@ -56,7 +56,7 @@ const ContactPage = () => {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 leading-[0.9]"
                     >
-                        Let's Talk <br />
+                        Let&apos;s Talk <br />
                         <span className="text-primary italic">Adventure</span>
                     </motion.h1>
 

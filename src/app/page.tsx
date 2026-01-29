@@ -200,9 +200,9 @@ export default function Home() {
               <div className="flex -space-x-4">
                 {[1, 2, 3, 4].map(i => (
                   <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-gray-200 overflow-hidden shadow-lg">
-                    <Image 
-                      src="/images/manali.png" 
-                      alt="User" 
+                    <Image
+                      src="/images/manali.png"
+                      alt="User"
                       width={48}
                       height={48}
                       className="w-full h-full object-cover"
@@ -403,7 +403,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               className="text-2xl sm:text-4xl md:text-6xl font-black text-white tracking-tighter leading-[1.1]"
             >
-              Don't Just Dream, <br />
+              Don&apos;t Just Dream, <br />
               <span className="text-primary italic">Start Your Journey.</span>
             </motion.h2>
 

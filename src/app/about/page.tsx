@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
-import { Shield, Target, Users, Award, GlassWater, Compass, History, Sparkles, MapPin, Globe } from "lucide-react";
+import { Shield, Target, Users, Award, GlassWater, Compass, Sparkles, MapPin, Globe } from "lucide-react";
 import Link from "next/link";
 
 const AboutPage = () => {
@@ -11,10 +12,12 @@ const AboutPage = () => {
         <div className="bg-white min-h-screen">
             {/* Hero Section */}
             <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
-                <img
+                <Image
                     src="/images/kerala.png"
                     alt="About Flycare Holidays"
+                    fill
                     className="absolute inset-0 w-full h-full object-cover"
+                    priority
                 />
                 <div className="absolute inset-0 bg-brand-dark/50 backdrop-blur-[2px]" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-dark/20 to-brand-dark/60" />
@@ -45,7 +48,7 @@ const AboutPage = () => {
                         transition={{ delay: 0.3 }}
                         className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed"
                     >
-                        We don't just plan trips; we craft immersive experiences that bridge cultures and create lifelong memories.
+                        We don&apos;t just plan trips; we craft immersive experiences that bridge cultures and create lifelong memories.
                     </motion.p>
                 </div>
 
@@ -111,16 +114,17 @@ const AboutPage = () => {
                                 viewport={{ once: true }}
                                 className="relative aspect-[4/5] rounded-[4rem] overflow-hidden shadow-2xl"
                             >
-                                <img
+                                <Image
                                     src="/images/manali.png"
                                     alt="Flycare Team"
+                                    fill
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent" />
 
                                 <div className="absolute bottom-10 left-10 right-10 glass-effect p-8 rounded-3xl border-white/20 animate-float">
                                     <h3 className="text-white text-2xl font-bold mb-2">Our Vision</h3>
-                                    <p className="text-white/70">To become the world's most desired curator of authentic and sustainable travel experiences.</p>
+                                    <p className="text-white/70">To become the world&apos;s most desired curator of authentic and sustainable travel experiences.</p>
                                 </div>
                             </motion.div>
 

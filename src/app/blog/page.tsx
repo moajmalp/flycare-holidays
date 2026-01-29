@@ -62,7 +62,7 @@ const BlogPage = () => {
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect text-primary font-bold text-sm tracking-widest uppercase mb-8"
                         >
                             <TrendingUp size={16} />
-                            Traveler's Journal
+                            Traveler&apos;s Journal
                         </motion.div>
 
                         <motion.h1
@@ -81,7 +81,7 @@ const BlogPage = () => {
                             transition={{ delay: 0.2 }}
                             className="text-white/60 text-lg md:text-xl max-w-2xl font-medium leading-relaxed"
                         >
-                            Expert tips, immersive destination guides, and untold stories from the world's most beautiful corners.
+                            Expert tips, immersive destination guides, and untold stories from the world&apos;s most beautiful corners.
                         </motion.p>
                     </div>
                 </div>

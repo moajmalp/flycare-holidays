@@ -6,7 +6,7 @@ import DestinationCard from "@/components/DestinationCard";
 import PackageCard from "@/components/PackageCard";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { Sparkles, MapPin, Search, Filter, Globe, Compass, ArrowRight, ArrowUpRight } from "lucide-react";
+import { Sparkles, MapPin, Search, Filter, Globe, Compass, ArrowUpRight } from "lucide-react";
 
 const DestinationsPage = () => {
     const [searchQuery, setSearchQuery] = useState("");
