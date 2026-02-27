@@ -21,7 +21,7 @@ const UpcomingPackage: React.FC<UpcomingPackageProps> = ({
     return (
         <motion.div
             whileHover={{ x: 5 }}
-            className="flex items-start gap-6 p-6 bg-white/50 backdrop-blur-xl rounded-[2rem] border border-gray-100 hover:border-primary/20 hover:bg-white transition-all duration-500 group shadow-sm hover:shadow-xl hover:shadow-primary/5"
+            className="flex items-start gap-6 p-6 bg-background/50 dark:bg-white/5 backdrop-blur-xl rounded-[2rem] border border-gray-100 dark:border-white/10 hover:border-primary/20 hover:bg-background text-foreground dark:border dark:border-white/10 transition-all duration-500 group shadow-sm hover:shadow-xl dark:shadow-none hover:shadow-primary/5"
         >
             {/* Thumbnail */}
             <div className="relative w-28 h-28 flex-shrink-0 overflow-hidden rounded-2xl shadow-md">
@@ -39,10 +39,10 @@ const UpcomingPackage: React.FC<UpcomingPackageProps> = ({
 
             {/* Details */}
             <div className="flex flex-col justify-center gap-3">
-                <h4 className="text-xl font-black text-brand-dark leading-tight group-hover:text-primary transition-colors tracking-tight">
+                <h4 className="text-xl font-black text-brand-dark dark:text-white leading-tight group-hover:text-primary transition-colors tracking-tight">
                     {title}
                 </h4>
-                <div className="flex flex-wrap gap-6 text-sm text-secondary font-bold">
+                <div className="flex flex-wrap gap-6 text-sm text-secondary dark:text-gray-300 font-bold">
                     <div className="flex items-center gap-2">
                         <Calendar size={16} className="text-primary" />
                         <span>{date}</span>

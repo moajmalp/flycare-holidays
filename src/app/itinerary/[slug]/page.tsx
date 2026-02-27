@@ -13,7 +13,7 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
     const data = itineraryData[slug] || defaultItinerary;
 
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-background text-foreground dark:border dark:border-white/10 min-h-screen">
             {/* Hero Section */}
             <section className="relative h-[80vh] w-full overflow-hidden">
                 <Image
@@ -43,7 +43,7 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.1 }}
-                                    className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter leading-[0.9]"
+                                    className="text-4xl md:text-6xl font-black text-brand-dark dark:text-white tracking-tighter leading-[0.9]"
                                 >
                                     {data.title.split(' ').map((word, i) => (
                                         <span key={i} className={i === 1 ? "text-primary italic block" : ""}>{word} </span>
@@ -63,28 +63,28 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.3 }}
-                                className="glass-effect p-8 rounded-[3rem] border-white/40 flex flex-wrap gap-10 items-center justify-between shadow-2xl"
+                                className="glass-effect p-8 rounded-[3rem] border-white/40 dark:border-brand-dark/40 flex flex-wrap gap-10 items-center justify-between shadow-2xl dark:shadow-none"
                             >
                                 <div className="space-y-1">
                                     <div className="flex items-center gap-2 text-primary">
                                         <Clock size={16} />
                                         <span className="text-xs font-black uppercase tracking-widest">Duration</span>
                                     </div>
-                                    <p className="text-brand-dark font-black text-lg">{data.days.length} Days / {data.days.length - 1} Nights</p>
+                                    <p className="text-brand-dark dark:text-white font-black text-lg">{data.days.length} Days / {data.days.length - 1} Nights</p>
                                 </div>
                                 <div className="space-y-1">
                                     <div className="flex items-center gap-2 text-primary">
                                         <Star size={16} fill="currentColor" />
                                         <span className="text-xs font-black uppercase tracking-widest">Experience</span>
                                     </div>
-                                    <p className="text-brand-dark font-black text-lg">Ultra Luxury</p>
+                                    <p className="text-brand-dark dark:text-white font-black text-lg">Ultra Luxury</p>
                                 </div>
                                 <div className="space-y-1">
                                     <div className="flex items-center gap-2 text-primary">
                                         <MapPin size={16} />
                                         <span className="text-xs font-black uppercase tracking-widest">Start City</span>
                                     </div>
-                                    <p className="text-brand-dark font-black text-lg">Srinagar</p>
+                                    <p className="text-brand-dark dark:text-white font-black text-lg">Srinagar</p>
                                 </div>
                             </motion.div>
                         </div>
@@ -96,12 +96,12 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
             <section className="py-24 relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Breadcrumbs */}
-                    <nav className="flex items-center text-sm text-secondary mb-20 overflow-x-auto whitespace-nowrap bg-soft-bg/50 w-fit px-6 py-3 rounded-full">
+                    <nav className="flex items-center text-sm text-secondary dark:text-gray-300 mb-20 overflow-x-auto whitespace-nowrap bg-soft-bg/50 w-fit px-6 py-3 rounded-full">
                         <Link href="/" className="hover:text-primary transition-colors font-bold">Home</Link>
                         <ChevronRight size={14} className="mx-3 opacity-40 shrink-0" />
                         <Link href="/destinations" className="hover:text-primary transition-colors font-bold">Destinations</Link>
                         <ChevronRight size={14} className="mx-3 opacity-40 shrink-0" />
-                        <span className="text-brand-dark font-black">{data.title}</span>
+                        <span className="text-brand-dark dark:text-white font-black">{data.title}</span>
                     </nav>
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
@@ -109,7 +109,7 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                         <div className="lg:col-span-8 space-y-24">
                             <div className="space-y-4">
                                 <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">The Journey</span>
-                                <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter italic">Day by Day</h2>
+                                <h2 className="text-3xl md:text-4xl font-black text-brand-dark dark:text-white tracking-tighter italic">Day by Day</h2>
                             </div>
 
                             <div className="relative">
@@ -126,21 +126,21 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                             className="relative pl-24 group"
                                         >
                                             {/* Day Bubble */}
-                                            <div className="absolute left-0 top-0 w-12 h-12 rounded-2xl bg-white border-2 border-primary shadow-[0_0_20px_rgba(255,153,51,0.2)] flex items-center justify-center font-black text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 z-10">
+                                            <div className="absolute left-0 top-0 w-12 h-12 rounded-2xl bg-background text-foreground dark:border dark:border-white/10 border-2 border-primary shadow-[0_0_20px_rgba(255,153,51,0.2)] flex items-center justify-center font-black text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 z-10">
                                                 {dayObj.day}
                                             </div>
 
                                             <div className="space-y-8">
                                                 <div className="space-y-2">
                                                     <span className="text-primary font-black text-sm uppercase tracking-widest">Day {dayObj.day}</span>
-                                                    <h3 className="text-3xl font-black text-brand-dark tracking-tight leading-tight group-hover:text-primary transition-colors">
+                                                    <h3 className="text-3xl font-black text-brand-dark dark:text-white tracking-tight leading-tight group-hover:text-primary transition-colors">
                                                         {dayObj.header}
                                                     </h3>
                                                 </div>
 
                                                 <ul className="space-y-6">
                                                     {dayObj.points.map((point: string, pIdx: number) => (
-                                                        <li key={pIdx} className="flex items-start gap-5 text-secondary leading-relaxed text-lg font-medium">
+                                                        <li key={pIdx} className="flex items-start gap-5 text-secondary dark:text-gray-300 leading-relaxed text-lg font-medium">
                                                             <div className="mt-3 flex-shrink-0 w-3 h-3 rounded-full bg-primary/20 border-2 border-primary/40 group-hover:bg-primary/40 transition-colors" />
                                                             {point}
                                                         </li>
@@ -150,7 +150,7 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                                 {/* Visual Accent */}
                                                 <div className="pt-4 flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
                                                     {[1, 2].map(i => (
-                                                        <div key={i} className="min-w-[200px] h-32 relative rounded-3xl bg-soft-bg overflow-hidden grayscale hover:grayscale-0 transition-all duration-500 border border-gray-100">
+                                                        <div key={i} className="min-w-[200px] h-32 relative rounded-3xl bg-soft-bg overflow-hidden grayscale hover:grayscale-0 transition-all duration-500 border border-gray-100 dark:border-white/10">
                                                             <Image src={data.headerImage} alt="Feature" fill className="object-cover" />
                                                         </div>
                                                     ))}
@@ -198,17 +198,17 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                 </div>
 
                                 {/* Support Card */}
-                                <div className="p-10 rounded-[3rem] glass-effect border-gray-100 text-center space-y-8 shadow-2xl shadow-primary/5">
+                                <div className="p-10 rounded-[3rem] glass-effect border-gray-100 dark:border-white/10 text-center space-y-8 shadow-2xl dark:shadow-none shadow-primary/5">
                                     <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto">
                                         <MessageCircle size={40} fill="currentColor" className="opacity-20" />
                                         <MessageCircle size={40} className="absolute" />
                                     </div>
                                     <div className="space-y-3">
-                                        <h3 className="text-2xl font-black text-brand-dark tracking-tight">Need Customization?</h3>
-                                        <p className="text-secondary font-medium px-4">Our travel designers can tweak this itinerary to match your specific taste.</p>
+                                        <h3 className="text-2xl font-black text-brand-dark dark:text-white tracking-tight">Need Customization?</h3>
+                                        <p className="text-secondary dark:text-gray-300 font-medium px-4">Our travel designers can tweak this itinerary to match your specific taste.</p>
                                     </div>
                                     <div className="flex flex-col gap-4">
-                                        <a href="https://wa.me/919876543210" className="flex items-center justify-center gap-2 font-black text-brand-dark hover:text-primary transition-colors text-lg">
+                                        <a href="https://wa.me/919876543210" className="flex items-center justify-center gap-2 font-black text-brand-dark dark:text-white hover:text-primary transition-colors text-lg">
                                             Chat with an Expert <ArrowRight size={20} />
                                         </a>
                                     </div>
@@ -224,12 +224,12 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                 <div className="max-w-7xl mx-auto rounded-[4rem] bg-soft-bg p-12 md:p-24 text-center relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -mr-48 -mt-48" />
                     <div className="relative z-10 space-y-12">
-                        <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight max-w-3xl mx-auto">
+                        <h2 className="text-3xl md:text-5xl font-black text-brand-dark dark:text-white tracking-tighter leading-tight max-w-3xl mx-auto">
                             Don&apos;t just witness the beauty, <span className="text-primary italic">Live It.</span>
                         </h2>
                         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                            <button className="btn-primary py-6 px-12 text-xl shadow-2xl">Download Brouchure</button>
-                            <Link href="/contact" className="text-brand-dark font-black text-xl hover:text-primary underline underline-offset-8 decoration-primary transition-all decoration-4">
+                            <button className="btn-primary py-6 px-12 text-xl shadow-2xl dark:shadow-none">Download Brouchure</button>
+                            <Link href="/contact" className="text-brand-dark dark:text-white font-black text-xl hover:text-primary underline underline-offset-8 decoration-primary transition-all decoration-4">
                                 Contact Support
                             </Link>
                         </div>

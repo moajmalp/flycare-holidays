@@ -60,16 +60,16 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <div className={`relative ${className}`} ref={dropdownRef}>
       {label && (
-        <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary ml-2 mb-3 block">
+        <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary dark:text-gray-300 ml-2 mb-3 block">
           {label}
         </label>
       )}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark outline-none cursor-pointer flex items-center justify-between hover:bg-soft-bg/70"
+        className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark dark:text-white outline-none cursor-pointer flex items-center justify-between hover:bg-soft-bg/70"
       >
-        <span className={selectedValue ? "text-brand-dark" : "text-secondary/50"}>
+        <span className={selectedValue ? "text-brand-dark dark:text-white" : "text-secondary/50"}>
           {selectedOption ? selectedOption.label : placeholder}
         </span>
         <div className="flex items-center gap-3">
@@ -89,7 +89,7 @@ const Dropdown: React.FC<DropdownProps> = ({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="absolute z-50 w-full mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
+              className="absolute z-50 w-full mt-2 bg-background text-foreground dark:border dark:border-white/10 rounded-2xl shadow-2xl dark:shadow-none border border-gray-100 dark:border-white/10 overflow-hidden"
             >
               <div className="max-h-64 overflow-y-auto custom-scrollbar">
                 {options.map((option) => (
@@ -97,7 +97,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                     key={option.value}
                     type="button"
                     onClick={() => handleSelect(option.value)}
-                    className={`w-full px-6 py-4 text-left font-bold text-brand-dark hover:bg-primary/10 transition-colors flex items-center justify-between ${
+                    className={`w-full px-6 py-4 text-left font-bold text-brand-dark dark:text-white hover:bg-primary/10 transition-colors flex items-center justify-between ${
                       selectedValue === option.value ? "bg-primary/5" : ""
                     }`}
                   >

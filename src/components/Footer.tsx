@@ -51,13 +51,13 @@ const Footer = () => {
                     {/* Brand Section */}
                     <div className="lg:col-span-1 space-y-8">
                         <Link href="/" className="inline-block group">
-                            <div className="bg-white/95 p-3 rounded-2xl transition-transform group-hover:scale-105 shadow-xl">
+                            <div className="bg-background/95 dark:bg-brand-dark/95 p-4 rounded-3xl transition-transform group-hover:scale-105 shadow-xl dark:shadow-none inline-block">
                                 <Image
                                     src="/logo.png"
                                     alt="Flycare Holidays"
-                                    width={160}
-                                    height={50}
-                                    className="h-10 w-auto"
+                                    width={220}
+                                    height={70}
+                                    className="h-14 w-auto"
                                 />
                             </div>
                         </Link>
@@ -91,7 +91,7 @@ const Footer = () => {
                                             href={link.href}
                                             className="text-gray-400 hover:text-primary transition-all flex items-center gap-2 group text-sm sm:text-base"
                                         >
-                                            <span className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-primary transition-colors" />
+                                            <span className="w-1.5 h-1.5 rounded-full bg-background/10 dark:bg-white/10 group-hover:bg-primary transition-colors" />
                                             {link.name}
                                         </Link>
                                     </li>

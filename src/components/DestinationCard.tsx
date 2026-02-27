@@ -29,10 +29,10 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
     return (
         <motion.div
             whileHover={{ y: -10 }}
-            className="group relative bg-white rounded-[2.5rem] overflow-hidden border border-gray-100 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex flex-col h-full"
+            className="group relative bg-background text-foreground dark:border dark:border-white/10 rounded-[2.5rem] overflow-hidden border border-gray-100 dark:border-white/10 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex flex-col h-full"
         >
             {/* Image Wrapper */}
-            <div className="relative aspect-[4/5] overflow-hidden">
+            <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                     src={image}
                     alt={title}
@@ -75,26 +75,26 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
             </div>
 
             {/* Bottom Reveal Section */}
-            <div className="p-8 flex flex-col flex-grow bg-white">
-                <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-2 text-secondary">
+            <div className="p-6 flex flex-col flex-grow bg-background text-foreground dark:border dark:border-white/10">
+                <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2 text-secondary dark:text-gray-300">
                         <Clock size={14} className="text-primary" />
                         <span className="text-xs font-bold">{subtitle}</span>
                     </div>
                     <div className="text-[10px] font-black text-primary/40 uppercase tracking-widest">Premium Luxury</div>
                 </div>
 
-                <p className="text-secondary text-sm leading-relaxed line-clamp-2 font-medium mb-6">
+                <p className="text-secondary dark:text-gray-300 text-sm leading-relaxed line-clamp-2 font-medium mb-4">
                     Experience the mystical beauty of {title} with our handpicked luxury stays and private guides.
                 </p>
 
                 <div className="mt-auto">
                     <Link
                         href={`/itinerary/${slug}`}
-                        className="w-full h-14 rounded-2xl bg-soft-bg border border-gray-100 flex items-center justify-center gap-2 group/btn hover:bg-primary transition-all duration-300"
+                        className="w-full h-12 rounded-2xl bg-soft-bg border border-gray-100 dark:border-white/10 flex items-center justify-center gap-2 group/btn hover:bg-primary transition-all duration-300"
                     >
-                        <span className="text-sm font-black text-brand-dark uppercase tracking-widest group-hover/btn:text-white transition-colors">View Itinerary</span>
-                        <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-dark group-hover/btn:scale-110 transition-transform">
+                        <span className="text-sm font-black text-brand-dark dark:text-white uppercase tracking-widest group-hover/btn:text-white transition-colors">View Itinerary</span>
+                        <div className="w-8 h-8 rounded-full bg-background text-foreground dark:border dark:border-white/10 flex items-center justify-center text-brand-dark dark:text-white group-hover/btn:scale-110 transition-transform">
                             <ArrowUpRight size={16} />
                         </div>
                     </Link>

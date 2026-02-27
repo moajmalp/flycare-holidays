@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: "Modern travel agency for your dream vacations.",
   },
   icons: {
-    icon: "/logo.png",
+    icon: "/favicon-flycare.ico",
     apple: "/logo.png",
   },
   // Performance optimizations
@@ -48,6 +48,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
 };
+
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export default function RootLayout({
   children,
@@ -59,9 +61,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased pt-20`}
       >
-        <Navbar />
-        <main>{children}</main>
-        <StickyContact />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main>{children}</main>
+          <StickyContact />
+        </ThemeProvider>
       </body>
     </html>
   );

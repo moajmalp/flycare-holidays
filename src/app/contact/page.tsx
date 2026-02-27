@@ -33,7 +33,7 @@ const ContactPage = () => {
     };
 
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-background text-foreground dark:border dark:border-white/10 min-h-screen">
             {/* Hero Section */}
             <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark">
                 {/* Animated Background Elements */}
@@ -78,7 +78,7 @@ const ContactPage = () => {
                         <div className="space-y-12">
                             <div className="space-y-4">
                                 <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">Reach Out</span>
-                                <h2 className="text-3xl md:text-4xl font-black text-brand-dark tracking-tighter">Contact Details</h2>
+                                <h2 className="text-3xl md:text-4xl font-black text-brand-dark dark:text-white tracking-tighter">Contact Details</h2>
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -93,13 +93,13 @@ const ContactPage = () => {
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ delay: i * 0.1 }}
-                                        className="p-8 rounded-[2.5rem] bg-soft-bg/50 border border-gray-100 hover:border-primary/30 hover:bg-white hover:shadow-xl transition-all duration-500 group"
+                                        className="p-8 rounded-[2.5rem] bg-soft-bg/50 border border-gray-100 dark:border-white/10 hover:border-primary/30 hover:bg-background text-foreground dark:border dark:border-white/10 hover:shadow-xl dark:shadow-none transition-all duration-500 group"
                                     >
                                         <div className={`w-14 h-14 rounded-2xl ${item.bg} flex items-center justify-center ${item.color} mb-6 group-hover:scale-110 transition-transform`}>
                                             <item.icon size={28} />
                                         </div>
-                                        <h4 className="text-xl font-bold text-brand-dark mb-2">{item.title}</h4>
-                                        <p className="text-secondary leading-relaxed font-medium">{item.content}</p>
+                                        <h4 className="text-xl font-bold text-brand-dark dark:text-white mb-2">{item.title}</h4>
+                                        <p className="text-secondary dark:text-gray-300 leading-relaxed font-medium">{item.content}</p>
                                     </motion.div>
                                 ))}
                             </div>
@@ -107,15 +107,15 @@ const ContactPage = () => {
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                className="p-10 rounded-[3rem] glass-effect border-primary/20 flex flex-col sm:flex-row items-center gap-8 shadow-2xl shadow-primary/10"
+                                className="p-10 rounded-[3rem] glass-effect border-primary/20 flex flex-col sm:flex-row items-center gap-8 shadow-2xl dark:shadow-none shadow-primary/10"
                             >
                                 <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center text-white shrink-0 animate-bounce">
                                     <MessageCircle size={36} fill="currentColor" />
                                 </div>
                                 <div className="text-center sm:text-left">
-                                    <p className="text-brand-dark text-xl font-black tracking-tight mb-1">Need instant assistance?</p>
+                                    <p className="text-brand-dark dark:text-white text-xl font-black tracking-tight mb-1">Need instant assistance?</p>
                                     <p className="text-primary text-lg font-bold">Chat with our experts on WhatsApp</p>
-                                    <a href="https://wa.me/919876543210" className="inline-block mt-4 text-brand-dark font-black hover:text-primary transition-colors">Start Chat Now →</a>
+                                    <a href="https://wa.me/919876543210" className="inline-block mt-4 text-brand-dark dark:text-white font-black hover:text-primary transition-colors">Start Chat Now →</a>
                                 </div>
                             </motion.div>
                         </div>
@@ -126,25 +126,25 @@ const ContactPage = () => {
                             <motion.div
                                 initial={{ opacity: 0, x: 30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                className="bg-white p-12 md:p-16 rounded-[4rem] shadow-2xl shadow-brand-dark/5 border border-gray-50"
+                                className="bg-background text-foreground dark:border dark:border-white/10 p-12 md:p-16 rounded-[4rem] shadow-2xl dark:shadow-none shadow-brand-dark/5 border border-gray-50 dark:border-white/5"
                             >
-                                <h2 className="text-3xl font-black text-brand-dark tracking-tighter mb-8 italic">Send an Inquiry</h2>
+                                <h2 className="text-3xl font-black text-brand-dark dark:text-white tracking-tighter mb-8 italic">Send an Inquiry</h2>
                                 <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="space-y-3">
-                                            <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary ml-2">Full Name</label>
+                                            <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary dark:text-gray-300 ml-2">Full Name</label>
                                             <input
                                                 type="text"
                                                 placeholder="John Doe"
-                                                className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark outline-none"
+                                                className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark dark:text-white outline-none"
                                             />
                                         </div>
                                         <div className="space-y-3">
-                                            <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary ml-2">Email Address</label>
+                                            <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary dark:text-gray-300 ml-2">Email Address</label>
                                             <input
                                                 type="email"
                                                 placeholder="john@example.com"
-                                                className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark outline-none"
+                                                className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark dark:text-white outline-none"
                                             />
                                         </div>
                                     </div>
@@ -173,14 +173,14 @@ const ContactPage = () => {
                                         />
                                     </div>
                                     <div className="space-y-3">
-                                        <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary ml-2">Special Requirements</label>
+                                        <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary dark:text-gray-300 ml-2">Special Requirements</label>
                                         <textarea
                                             placeholder="Tell us about your dream trip..."
                                             rows={5}
-                                            className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark outline-none resize-none"
+                                            className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark dark:text-white outline-none resize-none"
                                         ></textarea>
                                     </div>
-                                    <button className="btn-primary w-full py-6 rounded-2xl font-black uppercase tracking-[0.3em] shadow-2xl shadow-primary/30 group">
+                                    <button className="btn-primary w-full py-6 rounded-2xl font-black uppercase tracking-[0.3em] shadow-2xl dark:shadow-none shadow-primary/30 group">
                                         Send Inquiry
                                         <Send size={20} className="ml-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                     </button>

@@ -14,12 +14,12 @@ const FooterLoader = () => (
   <footer className="bg-brand-dark text-white pt-24 pb-12">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="animate-pulse">
-        <div className="h-8 bg-white/10 rounded w-1/4 mb-8"></div>
+        <div className="h-8 bg-background/10 dark:bg-white/10 rounded w-1/4 mb-8"></div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {[1, 2, 3, 4].map((i) => (
             <div key={i} className="space-y-4">
-              <div className="h-4 bg-white/10 rounded w-3/4"></div>
-              <div className="h-4 bg-white/10 rounded w-1/2"></div>
+              <div className="h-4 bg-background/10 dark:bg-white/10 rounded w-3/4"></div>
+              <div className="h-4 bg-background/10 dark:bg-white/10 rounded w-1/2"></div>
             </div>
           ))}
         </div>
@@ -139,7 +139,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col bg-white">
+    <div className="flex flex-col bg-background text-foreground dark:border dark:border-white/10">
       {/* Hero Section */}
       <section className="relative min-h-[75vh] flex items-center pt-12 overflow-hidden">
         {/* Animated Background Blobs */}
@@ -161,7 +161,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-black text-brand-dark leading-[1] sm:leading-[0.9] tracking-tighter"
+              className="text-4xl sm:text-5xl md:text-6xl font-black text-brand-dark dark:text-white leading-[1] sm:leading-[0.9] tracking-tighter"
             >
               Your Journey, <br />
               <span className="text-primary italic">Our Passion.</span>
@@ -171,7 +171,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-base sm:text-lg md:text-xl text-secondary max-w-xl leading-relaxed font-medium"
+              className="text-base sm:text-lg md:text-xl text-secondary dark:text-gray-300 max-w-xl leading-relaxed font-medium"
             >
               Escape the ordinary with bespoke itineraries designed by local experts. Every detail handled with premium care.
             </motion.p>
@@ -182,7 +182,7 @@ export default function Home() {
               transition={{ delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-5"
             >
-              <Link href="/contact" className="btn-primary py-5 px-10 text-lg shadow-2xl">
+              <Link href="/contact" className="btn-primary py-5 px-10 text-lg shadow-2xl dark:shadow-none">
                 Explore Packages
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -199,7 +199,7 @@ export default function Home() {
             >
               <div className="flex -space-x-4">
                 {[1, 2, 3, 4].map(i => (
-                  <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-gray-200 overflow-hidden shadow-lg">
+                  <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-soft-bg overflow-hidden shadow-lg">
                     <Image
                       src="/images/manali.png"
                       alt="User"
@@ -214,8 +214,8 @@ export default function Home() {
                   2k+
                 </div>
               </div>
-              <div className="text-sm font-bold text-secondary">
-                <span className="text-brand-dark block text-lg">Trusted by 2000+</span>
+              <div className="text-sm font-bold text-secondary dark:text-gray-300">
+                <span className="text-brand-dark dark:text-white block text-lg">Trusted by 2000+</span>
                 Happy travelers worldwide
               </div>
             </motion.div>
@@ -268,12 +268,12 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-8">
             <div className="space-y-4 max-w-2xl">
               <span className="text-primary font-black uppercase tracking-[0.3em] text-[10px] sm:text-xs">Curated Selection</span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-dark dark:text-white tracking-tighter leading-tight">
                 Most Popular <br />
                 <span className="text-primary italic">Global Escapes</span>
               </h2>
             </div>
-            <Link href="/destinations" className="group flex items-center gap-3 text-lg font-bold text-brand-dark hover:text-primary transition-colors">
+            <Link href="/destinations" className="group flex items-center gap-3 text-lg font-bold text-brand-dark dark:text-white hover:text-primary transition-colors">
               Explore All Destinations
               <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/5 transition-all">
                 <ArrowUpRight size={20} />
@@ -337,7 +337,7 @@ export default function Home() {
 
             <div className="relative mt-8 lg:mt-0">
               <div className="absolute -inset-10 bg-primary/20 rounded-full blur-[100px] hidden sm:block" />
-              <div className="relative glass-effect p-6 sm:p-10 rounded-[2.5rem] sm:rounded-[3.5rem] border-white/10 overflow-hidden shadow-2xl">
+              <div className="relative glass-effect p-6 sm:p-10 rounded-[2.5rem] sm:rounded-[3.5rem] border-white/10 overflow-hidden shadow-2xl dark:shadow-none">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16" />
                 <div className="space-y-6 sm:space-y-8">
                   <div className="inline-block p-3 sm:p-4 bg-primary/10 rounded-2xl text-primary mb-2">
@@ -364,7 +364,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24 max-w-3xl mx-auto space-y-6">
             <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">Testimonials</span>
-            <h2 className="text-4xl md:text-5xl font-black text-brand-dark tracking-tighter italic">Trusted Stories</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-brand-dark dark:text-white tracking-tighter italic">Trusted Stories</h2>
             <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
           </div>
 
@@ -417,7 +417,7 @@ export default function Home() {
                 Create Custom Package
                 <ArrowUpRight className="ml-2" />
               </button>
-              <a href="tel:+123456789" className="glass-effect !bg-white/10 !border-white/20 text-white px-8 sm:px-12 py-4 sm:py-6 rounded-xl sm:rounded-[1.5rem] font-bold text-lg sm:text-xl hover:bg-white/20 transition-all">
+              <a href="tel:+123456789" className="glass-effect !bg-background/10 dark:bg-white/10 !border-white/20 text-white px-8 sm:px-12 py-4 sm:py-6 rounded-xl sm:rounded-[1.5rem] font-bold text-lg sm:text-xl hover:bg-background/20 dark:bg-white/20 transition-all">
                 Talk to an Expert
               </a>
             </motion.div>

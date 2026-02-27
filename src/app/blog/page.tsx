@@ -48,7 +48,7 @@ const BlogPage = () => {
     ];
 
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-background text-foreground dark:border dark:border-white/10 min-h-screen">
             {/* Hero Section */}
             <section className="relative pt-48 pb-32 overflow-hidden bg-brand-dark">
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] -mr-96 -mt-96" />
@@ -101,7 +101,7 @@ const BlogPage = () => {
                                     viewport={{ once: true }}
                                     className="group grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
                                 >
-                                    <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl">
+                                    <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl dark:shadow-none">
                                         <Image
                                             src={post.image}
                                             alt={post.title}
@@ -113,7 +113,7 @@ const BlogPage = () => {
                                         </div>
                                     </div>
                                     <div className="space-y-6">
-                                        <div className="flex items-center gap-6 text-sm text-secondary font-bold">
+                                        <div className="flex items-center gap-6 text-sm text-secondary dark:text-gray-300 font-bold">
                                             <div className="flex items-center gap-2">
                                                 <Calendar size={16} className="text-primary" />
                                                 {post.date}
@@ -123,20 +123,20 @@ const BlogPage = () => {
                                                 {post.readTime}
                                             </div>
                                         </div>
-                                        <h2 className="text-2xl md:text-3xl font-black text-brand-dark group-hover:text-primary transition-colors tracking-tight leading-tight">
+                                        <h2 className="text-2xl md:text-3xl font-black text-brand-dark dark:text-white group-hover:text-primary transition-colors tracking-tight leading-tight">
                                             {post.title}
                                         </h2>
-                                        <p className="text-secondary text-base leading-relaxed line-clamp-3 font-medium">
+                                        <p className="text-secondary dark:text-gray-300 text-base leading-relaxed line-clamp-3 font-medium">
                                             {post.excerpt}
                                         </p>
-                                        <div className="pt-4 flex items-center justify-between border-t border-gray-100">
+                                        <div className="pt-4 flex items-center justify-between border-t border-gray-100 dark:border-white/10">
                                             <div className="flex items-center gap-3">
                                                 <div className="w-10 h-10 rounded-full bg-soft-bg flex items-center justify-center text-primary">
                                                     <User size={18} />
                                                 </div>
-                                                <span className="font-bold text-brand-dark">{post.author}</span>
+                                                <span className="font-bold text-brand-dark dark:text-white">{post.author}</span>
                                             </div>
-                                            <Link href={`/blog/${i}`} className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center text-brand-dark group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
+                                            <Link href={`/blog/${i}`} className="w-12 h-12 rounded-full border border-gray-100 dark:border-white/10 flex items-center justify-center text-brand-dark dark:text-white group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
                                                 <ChevronRight size={24} />
                                             </Link>
                                         </div>
@@ -148,24 +148,24 @@ const BlogPage = () => {
                         {/* Sidebar */}
                         <aside className="lg:col-span-4 space-y-12">
                             {/* Search */}
-                            <div className="p-10 rounded-[3rem] bg-soft-bg/50 border border-gray-100">
-                                <h3 className="text-xl font-bold text-brand-dark mb-6">Search Articles</h3>
+                            <div className="p-10 rounded-[3rem] bg-soft-bg/50 border border-gray-100 dark:border-white/10">
+                                <h3 className="text-xl font-bold text-brand-dark dark:text-white mb-6">Search Articles</h3>
                                 <div className="relative">
                                     <input
                                         type="text"
                                         placeholder="Find inspiration..."
-                                        className="w-full pl-12 pr-6 py-4 bg-white rounded-2xl border-none focus:ring-2 focus:ring-primary/20 outline-none font-bold text-brand-dark"
+                                        className="w-full pl-12 pr-6 py-4 bg-background text-foreground dark:border dark:border-white/10 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 outline-none font-bold text-brand-dark dark:text-white"
                                     />
                                     <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-primary" size={20} />
                                 </div>
                             </div>
 
                             {/* Tags */}
-                            <div className="p-10 rounded-[3rem] glass-effect border-gray-100">
-                                <h3 className="text-xl font-bold text-brand-dark mb-6">Popular Tags</h3>
+                            <div className="p-10 rounded-[3rem] glass-effect border-gray-100 dark:border-white/10">
+                                <h3 className="text-xl font-bold text-brand-dark dark:text-white mb-6">Popular Tags</h3>
                                 <div className="flex flex-wrap gap-3">
                                     {["Adventure", "Luxury", "Culture", "Tips", "Seasonal", "Eco-Travel", "Guides"].map(tag => (
-                                        <button key={tag} className="px-5 py-2 rounded-full bg-white border border-gray-100 text-secondary font-bold text-sm hover:border-primary hover:text-primary transition-all">
+                                        <button key={tag} className="px-5 py-2 rounded-full bg-background text-foreground dark:border dark:border-white/10 border border-gray-100 dark:border-white/10 text-secondary dark:text-gray-300 font-bold text-sm hover:border-primary hover:text-primary transition-all">
                                             #{tag}
                                         </button>
                                     ))}
@@ -184,7 +184,7 @@ const BlogPage = () => {
                                     <input
                                         type="email"
                                         placeholder="Your Email"
-                                        className="w-full px-6 py-4 bg-white/10 rounded-2xl border border-white/10 text-white placeholder:text-white/30 font-bold outline-none focus:border-primary/50"
+                                        className="w-full px-6 py-4 bg-background/10 dark:bg-white/10 rounded-2xl border border-white/10 text-white placeholder:text-white/30 font-bold outline-none focus:border-primary/50"
                                     />
                                     <button className="btn-primary w-full py-4 rounded-2xl font-black uppercase tracking-widest shadow-none">
                                         Join Now

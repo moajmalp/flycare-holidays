@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, Sun, LogIn, ChevronDown, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
@@ -45,20 +46,20 @@ const Navbar = () => {
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex items-center justify-between transition-all duration-500 rounded-full px-6 py-2 shadow-2xl border ${scrolled
-            ? "glass-premium border-white/30"
-            : "bg-white/80 backdrop-blur-xl border-white/40 shadow-xl"
+        <div className={`flex items-center justify-between transition-all duration-500 rounded-full px-6 py-2 shadow-2xl dark:shadow-none border ${scrolled
+          ? "glass-premium border-white/30"
+          : "bg-background/80 dark:bg-brand-dark/80 backdrop-blur-xl border-white/40 dark:border-brand-dark/40 shadow-xl dark:shadow-none"
           }`}>
           {/* Left: Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center group">
-              <div className="relative overflow-hidden transition-transform group-hover:scale-105">
+              <div className="relative transition-transform group-hover:scale-105">
                 <Image
                   src="/logo.png"
                   alt="Flycare Holidays"
-                  width={160}
-                  height={50}
-                  className="h-9 w-auto md:h-11 object-contain"
+                  width={210}
+                  height={70}
+                  className="h-11 w-auto md:h-14 object-contain"
                   priority
                 />
               </div>
@@ -83,7 +84,7 @@ const Navbar = () => {
                       href={link.href}
                       className={`relative px-5 py-2 text-sm font-bold transition-all duration-300 rounded-full flex items-center gap-1 ${isActive
                         ? "text-white bg-primary shadow-sm"
-                        : "text-primary-deep/80 hover:text-primary hover:bg-white/50"
+                        : "text-primary-deep/80 hover:text-primary hover:bg-background/50 dark:bg-white/5"
                         }`}
                     >
                       {link.name}
@@ -104,7 +105,7 @@ const Navbar = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 10 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50"
+                            className="absolute top-full left-0 mt-2 w-64 bg-background text-foreground dark:border dark:border-white/10 rounded-2xl shadow-2xl dark:shadow-none border border-gray-100 dark:border-white/10 overflow-hidden z-50"
                             onMouseEnter={() => setDestinationsOpen(true)}
                             onMouseLeave={() => setDestinationsOpen(false)}
                           >
@@ -113,7 +114,7 @@ const Navbar = () => {
                                 <Link
                                   key={option.name}
                                   href={option.href}
-                                  className={`block px-6 py-4 text-sm font-bold text-primary-deep hover:bg-primary/10 transition-colors ${index === destinationOptions.length - 1 ? "border-t border-gray-100 bg-soft-bg/50" : ""
+                                  className={`block px-6 py-4 text-sm font-bold text-primary-deep hover:bg-primary/10 transition-colors ${index === destinationOptions.length - 1 ? "border-t border-gray-100 dark:border-white/10 bg-soft-bg/50" : ""
                                     }`}
                                 >
                                   {option.name}
@@ -132,9 +133,7 @@ const Navbar = () => {
 
           {/* Right: Actions */}
           <div className="flex items-center gap-3">
-            <button className="p-2.5 text-primary-deep/60 hover:text-primary transition-colors rounded-full bg-primary-light/30 border border-primary/10">
-              <Sun size={20} />
-            </button>
+            <ThemeToggle />
             <Link
               href="/contact"
               className="btn-primary !px-6 !py-2.5 !text-sm !rounded-full shadow-lg"
@@ -163,7 +162,7 @@ const Navbar = () => {
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             className="absolute inset-x-4 top-24 z-50 lg:hidden"
           >
-            <div className="glass-effect rounded-[2.5rem] p-6 shadow-2xl border-white/60">
+            <div className="glass-effect rounded-[2.5rem] p-6 shadow-2xl dark:shadow-none border-white/60">
               <div className="flex flex-col gap-2">
                 {navLinks.map((link) => {
                   const isDestinations = link.name === "Destinations";
@@ -176,7 +175,7 @@ const Navbar = () => {
                         }}
                         className={`px-6 py-4 rounded-2xl text-lg font-bold transition-all flex items-center justify-between ${pathname === link.href
                           ? "bg-primary/10 text-primary"
-                          : "text-brand-dark hover:bg-brand-dark/5"
+                          : "text-brand-dark dark:text-white hover:bg-brand-dark/5"
                           }`}
                       >
                         {link.name}
@@ -213,7 +212,7 @@ const Navbar = () => {
                                     key={option.name}
                                     href={option.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="block px-4 py-3 rounded-xl text-sm font-bold text-brand-dark hover:bg-primary/10 transition-colors"
+                                    className="block px-4 py-3 rounded-xl text-sm font-bold text-brand-dark dark:text-white hover:bg-primary/10 transition-colors"
                                   >
                                     {option.name}
                                   </Link>

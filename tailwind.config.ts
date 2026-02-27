@@ -9,19 +9,21 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
+                background: "var(--background)",
+                foreground: "var(--foreground)",
                 primary: {
-                    DEFAULT: "#10B981", // Emerald-500
+                    DEFAULT: "var(--primary)",
                     foreground: "#FFFFFF",
-                    dark: "#065F46",    // Emerald-800
-                    light: "#D1FAE5",   // Emerald-100
-                    deep: "#064E3B",    // Emerald-900 (Forest)
+                    dark: "var(--primary-dark)",
+                    light: "var(--primary-light)",
+                    deep: "var(--primary-deep)",
                 },
                 accent: {
-                    DEFAULT: "#F59E0B", // Amber-500 (Gold)
-                    hover: "#D97706",   // Amber-600
+                    DEFAULT: "var(--accent)",
+                    hover: "var(--accent-hover)",
                 },
-                "brand-dark": "#064E3B",
-                "soft-bg": "#F8FAFC",
+                "brand-dark": "var(--brand-dark)",
+                "soft-bg": "var(--soft-bg)",
             },
             backgroundImage: {
                 "hero-gradient": "linear-gradient(135deg, #064E3B 0%, #047857 100%)",

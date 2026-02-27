@@ -70,7 +70,7 @@ const DestinationsPage = () => {
     );
 
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-background text-foreground dark:border dark:border-white/10 min-h-screen">
             {/* Header / Hero Section */}
             <section className="relative pt-48 pb-32 overflow-hidden">
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] -mr-96 -mt-96" />
@@ -90,7 +90,7 @@ const DestinationsPage = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter mb-8 leading-[0.9]"
+                        className="text-4xl md:text-6xl font-black text-brand-dark dark:text-white tracking-tighter mb-8 leading-[0.9]"
                     >
                         Where to <br />
                         <span className="text-primary italic">Adventure Next?</span>
@@ -113,8 +113,8 @@ const DestinationsPage = () => {
                         className="max-w-2xl mx-auto relative group"
                     >
                         <div className="absolute inset-0 bg-primary/20 rounded-[2rem] blur-2xl opacity-0 group-focus-within:opacity-100 transition-opacity" />
-                        <div className="relative glass-effect p-2 rounded-[2rem] flex items-center border-white/40 shadow-xl">
-                            <div className="pl-6 text-secondary">
+                        <div className="relative glass-effect p-2 rounded-[2rem] flex items-center border-white/40 dark:border-brand-dark/40 shadow-xl dark:shadow-none">
+                            <div className="pl-6 text-secondary dark:text-gray-300">
                                 <Search size={24} />
                             </div>
                             <input
@@ -122,7 +122,7 @@ const DestinationsPage = () => {
                                 placeholder="Search by city, region or country..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-full bg-transparent border-none focus:ring-0 text-brand-dark font-bold text-lg px-4 placeholder:text-secondary/50 placeholder:font-medium"
+                                className="w-full bg-transparent border-none focus:ring-0 text-brand-dark dark:text-white font-bold text-lg px-4 placeholder:text-secondary/50 placeholder:font-medium"
                             />
                             <button className="btn-primary py-4 px-8 rounded-[1.5rem] flex items-center gap-2">
                                 <Filter size={18} />
@@ -161,11 +161,11 @@ const DestinationsPage = () => {
                                 animate={{ opacity: 1 }}
                                 className="text-center py-20"
                             >
-                                <div className="w-24 h-24 bg-soft-bg rounded-full flex items-center justify-center mx-auto mb-6 text-secondary">
+                                <div className="w-24 h-24 bg-soft-bg rounded-full flex items-center justify-center mx-auto mb-6 text-secondary dark:text-gray-300">
                                     <Globe size={48} />
                                 </div>
-                                <h3 className="text-2xl font-bold text-brand-dark mb-2">No matching destinations found</h3>
-                                <p className="text-secondary">Try searching for something else or browse all locations.</p>
+                                <h3 className="text-2xl font-bold text-brand-dark dark:text-white mb-2">No matching destinations found</h3>
+                                <p className="text-secondary dark:text-gray-300">Try searching for something else or browse all locations.</p>
                             </motion.div>
                         )}
                     </AnimatePresence>
@@ -182,19 +182,19 @@ const DestinationsPage = () => {
                             <div className="space-y-10">
                                 <div className="space-y-4">
                                     <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">Signature Collection</span>
-                                    <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
+                                    <h2 className="text-3xl md:text-5xl font-black text-brand-dark dark:text-white tracking-tighter leading-tight">
                                         Limited Edition <br /><span className="text-primary italic">Global Retreats</span>
                                     </h2>
                                 </div>
-                                <p className="text-secondary text-xl leading-relaxed font-medium">
+                                <p className="text-secondary dark:text-gray-300 text-xl leading-relaxed font-medium">
                                     Discover our hand-picked experiences designed for the ultra-premium traveler. Minimal groups, maximum soul.
                                 </p>
                                 <div className="flex gap-4">
-                                    <div className="flex items-center gap-2 px-4 py-2 bg-white/50 rounded-full text-secondary font-bold text-sm">
+                                    <div className="flex items-center gap-2 px-4 py-2 bg-background/50 dark:bg-white/5 rounded-full text-secondary dark:text-gray-300 font-bold text-sm">
                                         <Sparkles size={16} className="text-primary" />
                                         Private Guided
                                     </div>
-                                    <div className="flex items-center gap-2 px-4 py-2 bg-white/50 rounded-full text-secondary font-bold text-sm">
+                                    <div className="flex items-center gap-2 px-4 py-2 bg-background/50 dark:bg-white/5 rounded-full text-secondary dark:text-gray-300 font-bold text-sm">
                                         <MapPin size={16} className="text-primary" />
                                         Luxury Stay
                                     </div>
@@ -210,7 +210,7 @@ const DestinationsPage = () => {
                                     image="/images/agra.png"
                                 />
                                 <div className="text-right">
-                                    <Link href="/contact" className="group inline-flex items-center gap-3 text-lg font-bold text-brand-dark hover:text-primary transition-colors">
+                                    <Link href="/contact" className="group inline-flex items-center gap-3 text-lg font-bold text-brand-dark dark:text-white hover:text-primary transition-colors">
                                         Request Custom Itinerary
                                         <div className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-primary group-hover:bg-primary/5 transition-all">
                                             <ArrowUpRight size={20} />

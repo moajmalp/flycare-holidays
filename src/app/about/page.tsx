@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const AboutPage = () => {
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-background text-foreground dark:border dark:border-white/10 min-h-screen">
             {/* Hero Section */}
             <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
                 <Image
@@ -70,12 +70,12 @@ const AboutPage = () => {
                             >
                                 <div className="space-y-4">
                                     <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">Our Heritage</span>
-                                    <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tighter leading-tight">
+                                    <h2 className="text-3xl md:text-5xl font-black text-brand-dark dark:text-white tracking-tighter leading-tight">
                                         Crafting the Art of <br /><span className="text-primary italic">Exploration</span>
                                     </h2>
                                 </div>
 
-                                <div className="space-y-8 text-secondary text-lg leading-relaxed">
+                                <div className="space-y-8 text-secondary dark:text-gray-300 text-lg leading-relaxed">
                                     <p className="font-medium">
                                         Founded on the principle that luxury is in the details, Flycare Holidays has redefined what it means to travel with intention.
                                     </p>
@@ -90,8 +90,8 @@ const AboutPage = () => {
                                             <Globe size={32} />
                                         </div>
                                         <div>
-                                            <div className="text-3xl font-black text-brand-dark">50+</div>
-                                            <div className="text-sm font-bold text-secondary uppercase tracking-wider">Destinations</div>
+                                            <div className="text-3xl font-black text-brand-dark dark:text-white">50+</div>
+                                            <div className="text-sm font-bold text-secondary dark:text-gray-300 uppercase tracking-wider">Destinations</div>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-4">
@@ -99,8 +99,8 @@ const AboutPage = () => {
                                             <Users size={32} />
                                         </div>
                                         <div>
-                                            <div className="text-3xl font-black text-brand-dark">10K+</div>
-                                            <div className="text-sm font-bold text-secondary uppercase tracking-wider">Travellers</div>
+                                            <div className="text-3xl font-black text-brand-dark dark:text-white">10K+</div>
+                                            <div className="text-sm font-bold text-secondary dark:text-gray-300 uppercase tracking-wider">Travellers</div>
                                         </div>
                                     </div>
                                 </div>
@@ -112,7 +112,7 @@ const AboutPage = () => {
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                className="relative aspect-[4/5] rounded-[4rem] overflow-hidden shadow-2xl"
+                                className="relative aspect-[4/5] rounded-[4rem] overflow-hidden shadow-2xl dark:shadow-none"
                             >
                                 <Image
                                     src="/images/manali.png"
@@ -177,15 +177,15 @@ const AboutPage = () => {
             {/* CTA Final Block */}
             <section className="py-32 px-4">
                 <div className="max-w-5xl mx-auto text-center space-y-12">
-                    <h2 className="text-4xl md:text-6xl font-black text-brand-dark tracking-tighter leading-[0.9]">
+                    <h2 className="text-4xl md:text-6xl font-black text-brand-dark dark:text-white tracking-tighter leading-[0.9]">
                         Ready to Begin Your <br />
                         <span className="text-primary italic">Next Chapter?</span>
                     </h2>
-                    <p className="text-secondary text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-secondary dark:text-gray-300 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
                         Join thousands of travelers who have found their passion for exploration with Flycare Holidays.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
-                        <Link href="/contact" className="btn-primary py-6 px-12 text-xl shadow-2xl">
+                        <Link href="/contact" className="btn-primary py-6 px-12 text-xl shadow-2xl dark:shadow-none">
                             Start Planning
                         </Link>
                         <Link href="/destinations" className="btn-outline py-6 px-12 text-xl glass-effect">

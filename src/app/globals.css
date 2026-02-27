@@ -26,6 +26,31 @@
   --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
+.dark {
+  --background: #022c22;
+  /* Very dark emerald */
+  --foreground: #f8fafc;
+  /* Near white */
+
+  --primary: #34d399;
+  /* Lighter emerald for visibility */
+  --primary-hover: #10b981;
+  --primary-dark: #065f46;
+  --primary-light: #064e3b;
+  --primary-deep: #a7f3d0;
+  /* Muted light green for text */
+
+  --accent: #fbbf24;
+  --accent-hover: #f59e0b;
+
+  --soft-bg: #064e3b;
+  --brand-dark: #022c22;
+  --secondary: #cbd5e1;
+
+  --glass-bg: rgba(2, 44, 34, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

@@ -122,16 +122,16 @@ const DatePicker: React.FC<DatePickerProps> = ({
   return (
     <div className={`relative ${className}`} ref={datePickerRef}>
       {label && (
-        <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary ml-2 mb-3 block">
+        <label className="text-xs font-black uppercase tracking-[0.2em] text-secondary dark:text-gray-300 ml-2 mb-3 block">
           {label}
         </label>
       )}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark outline-none cursor-pointer flex items-center justify-between hover:bg-soft-bg/70"
+        className="w-full px-8 py-5 bg-soft-bg/50 rounded-2xl border-none focus:ring-2 focus:ring-primary/20 transition-all font-bold text-brand-dark dark:text-white outline-none cursor-pointer flex items-center justify-between hover:bg-soft-bg/70"
       >
-        <span className={selectedDate ? "text-brand-dark" : "text-secondary/50"}>
+        <span className={selectedDate ? "text-brand-dark dark:text-white" : "text-secondary/50"}>
           {selectedDate ? formatDate(selectedDate) : placeholder}
         </span>
         <Calendar size={20} className="text-primary" />
@@ -145,7 +145,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="absolute z-50 w-full sm:w-auto mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
+              className="absolute z-50 w-full sm:w-auto mt-2 bg-background text-foreground dark:border dark:border-white/10 rounded-2xl shadow-2xl dark:shadow-none border border-gray-100 dark:border-white/10 overflow-hidden"
             >
               <div className="p-6">
                 {/* Header */}
@@ -155,9 +155,9 @@ const DatePicker: React.FC<DatePickerProps> = ({
                     onClick={() => navigateMonth("prev")}
                     className="p-2 rounded-xl hover:bg-soft-bg transition-colors"
                   >
-                    <ChevronLeft size={20} className="text-brand-dark" />
+                    <ChevronLeft size={20} className="text-brand-dark dark:text-white" />
                   </button>
-                  <h3 className="text-lg font-black text-brand-dark">
+                  <h3 className="text-lg font-black text-brand-dark dark:text-white">
                     {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
                   </h3>
                   <button
@@ -165,7 +165,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
                     onClick={() => navigateMonth("next")}
                     className="p-2 rounded-xl hover:bg-soft-bg transition-colors"
                   >
-                    <ChevronRight size={20} className="text-brand-dark" />
+                    <ChevronRight size={20} className="text-brand-dark dark:text-white" />
                   </button>
                 </div>
 
@@ -174,7 +174,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
                   {dayNames.map((day) => (
                     <div
                       key={day}
-                      className="text-center text-xs font-bold text-secondary py-2"
+                      className="text-center text-xs font-bold text-secondary dark:text-gray-300 py-2"
                     >
                       {day}
                     </div>
@@ -209,7 +209,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
                             ? "bg-primary text-white shadow-lg scale-110"
                             : today
                             ? "bg-primary/10 text-primary border-2 border-primary"
-                            : "text-brand-dark hover:bg-soft-bg"
+                            : "text-brand-dark dark:text-white hover:bg-soft-bg"
                           }
                         `}
                       >

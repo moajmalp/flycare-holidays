@@ -7,7 +7,7 @@ const StickyContact = () => {
     return (
         <div className="fixed bottom-6 right-6 z-50">
             <button
-                className="flex items-center justify-center w-14 h-14 bg-primary text-white rounded-2xl shadow-xl hover:scale-110 transition-transform duration-300 group"
+                className="flex items-center justify-center w-14 h-14 bg-primary text-white rounded-2xl shadow-xl dark:shadow-none hover:scale-110 transition-transform duration-300 group"
                 onClick={() => window.open("https://wa.me/yournumber", "_blank")}
                 aria-label="Contact Us"
             >
