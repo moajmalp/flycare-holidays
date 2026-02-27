@@ -120,24 +120,6 @@ export default function Home() {
     }
   ];
 
-  const features = [
-    {
-      icon: MapPin,
-      title: "Curated Destinations",
-      description: "Handpicked locations and experiences that offer the perfect blend of local culture and luxury comfort."
-    },
-    {
-      icon: ShieldCheck,
-      title: "Safe & Reliable",
-      description: "Your safety is our priority. We partner with verified local guides and premium transport providers."
-    },
-    {
-      icon: Headphones,
-      title: "Round-the-clock Support",
-      description: "Our dedicated travel experts are available 24/7 to assist you at every step of your global journey."
-    }
-  ];
-
   return (
     <div className="flex flex-col bg-background text-foreground dark:border dark:border-white/10">
       {/* Hero Section */}

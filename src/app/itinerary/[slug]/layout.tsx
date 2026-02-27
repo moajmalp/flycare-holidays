@@ -22,7 +22,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function ItineraryLayout({
     children,
-    params,
 }: {
     children: React.ReactNode;
     params: Promise<{ slug: string }>;

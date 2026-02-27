@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight, Calendar, MapPin, Clock, Star, Sparkles, ArrowRight, MessageCircle, Info, CheckCircle2 } from "lucide-react";
+import { ChevronRight, MapPin, Clock, Star, Sparkles, ArrowRight, MessageCircle, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { itineraryData, defaultItinerary } from "@/data/itinerary-data";
 import Footer from "@/components/Footer";

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Sun, LogIn, ChevronDown, Globe } from "lucide-react";
+import { Menu, X, LogIn, ChevronDown, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ThemeToggle } from "@/components/ThemeToggle";

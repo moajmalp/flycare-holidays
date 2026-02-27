@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Footer from "@/components/Footer";
-import { Maximize2, X, Compass, Sparkles, MapPin, Camera, Play } from "lucide-react";
+import { Maximize2, X, Sparkles, MapPin, Camera, Play } from "lucide-react";
 
 interface MediaItem {
     src: string;
@@ -76,7 +76,7 @@ export default function GalleryClient({
                         {categories.map((cat) => (
                             <button
                                 key={cat}
-                                onClick={() => setFilter(cat as any)}
+                                onClick={() => setFilter(cat as "All" | "Photos" | "Videos")}
                                 className={`px-8 py-3 rounded-full font-bold transition-all duration-300 ${filter === cat
                                     ? "bg-primary text-white shadow-lg shadow-primary/20 scale-105"
                                     : "bg-soft-bg text-secondary dark:text-gray-300 hover:bg-soft-bg"
