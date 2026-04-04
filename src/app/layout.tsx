@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: "Modern travel agency for your dream vacations.",
   },
   icons: {
-    icon: "/favicon-flycare.ico",
+    icon: "/logo.png",
     apple: "/logo.png",
   },
   // Performance optimizations

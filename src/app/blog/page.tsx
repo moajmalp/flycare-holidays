@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
-import { Calendar, User, ArrowRight, Search, Tag, TrendingUp, Sparkles, Clock, ChevronRight } from "lucide-react";
+import { Calendar, User, Search, TrendingUp, Sparkles, Clock, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 const BlogPage = () => {

@@ -1,0 +1,23 @@
+
+> flycare@0.1.0 lint
+> eslint
+
+
+/Users/moajmalp/flycare/flycare-holidays/next-env.d.ts
+  3:1  error  Do not use a triple slash reference for ./.next/types/routes.d.ts, use `import` style instead  @typescript-eslint/triple-slash-reference
+
+/Users/moajmalp/flycare/flycare-holidays/src/app/about/page.tsx
+  7:40  warning  'GlassWater' is defined but never used  @typescript-eslint/no-unused-vars
+  7:52  warning  'Compass' is defined but never used     @typescript-eslint/no-unused-vars
+  7:71  warning  'MapPin' is defined but never used      @typescript-eslint/no-unused-vars
+
+/Users/moajmalp/flycare/flycare-holidays/src/app/blog/page.tsx
+  7:26  warning  'ArrowRight' is defined but never used  @typescript-eslint/no-unused-vars
+  7:46  warning  'Tag' is defined but never used         @typescript-eslint/no-unused-vars
+
+/Users/moajmalp/flycare/flycare-holidays/src/app/page.tsx
+  33:3  warning  'ShieldCheck' is defined but never used  @typescript-eslint/no-unused-vars
+  34:3  warning  'Headphones' is defined but never used   @typescript-eslint/no-unused-vars
+
+✖ 8 problems (1 error, 7 warnings)
+

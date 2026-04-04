@@ -48,7 +48,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
 
                 {/* Top Badge */}
                 <div className="absolute top-6 left-6 flex gap-2">
-                    <div className="glass-effect px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg border-white/20">
+                    <div className="dark-glass px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg border-white/20">
                         <Star size={12} className="text-primary fill-primary" />
                         <span className="text-[10px] font-black text-white">{rating}</span>
                     </div>
@@ -56,7 +56,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
 
                 {/* Bottom Content on Image */}
                 <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-                    <div className="glass-effect p-4 sm:p-5 rounded-xl sm:rounded-2xl border-white/20 backdrop-blur-md translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="dark-glass p-4 sm:p-5 rounded-xl sm:rounded-2xl border-white/20 backdrop-blur-md translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                         <div className="flex justify-between items-end gap-2">
                             <div className="space-y-1 min-w-0">
                                 <div className="flex items-center gap-1.5 text-white/70">
@@ -81,7 +81,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({
                         <Clock size={14} className="text-primary" />
                         <span className="text-xs font-bold">{subtitle}</span>
                     </div>
-                    <div className="text-[10px] font-black text-primary/40 uppercase tracking-widest">Premium Luxury</div>
+                    <div className="text-[10px] font-black text-primary-dark/60 dark:text-primary/60 uppercase tracking-widest">Premium Luxury</div>
                 </div>
 
                 <p className="text-secondary dark:text-gray-300 text-sm leading-relaxed line-clamp-2 font-medium mb-4">

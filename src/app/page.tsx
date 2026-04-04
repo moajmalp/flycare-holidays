@@ -30,8 +30,6 @@ const FooterLoader = () => (
 import {
   Users,
   MapPin,
-  ShieldCheck,
-  Headphones,
   Compass,
   ArrowRight,
   Star,
@@ -133,7 +131,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect text-primary font-bold text-sm tracking-widest uppercase"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect text-primary-dark dark:text-primary font-bold text-sm tracking-widest uppercase"
             >
               <Sparkles size={16} />
               Reinventing Luxury Travel
@@ -153,7 +151,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-base sm:text-lg md:text-xl text-secondary dark:text-gray-300 max-w-xl leading-relaxed font-medium"
+              className="text-base sm:text-lg md:text-xl text-brand-dark dark:text-white max-w-xl leading-relaxed font-medium"
             >
               Escape the ordinary with bespoke itineraries designed by local experts. Every detail handled with premium care.
             </motion.p>
@@ -196,9 +194,9 @@ export default function Home() {
                   2k+
                 </div>
               </div>
-              <div className="text-sm font-bold text-secondary dark:text-gray-300">
+              <div className="text-sm font-bold text-brand-dark/70 dark:text-white/80">
                 <span className="text-brand-dark dark:text-white block text-lg">Trusted by 2000+</span>
-                Happy travelers worldwide
+                <span>Happy travelers worldwide</span>
               </div>
             </motion.div>
           </div>
@@ -222,7 +220,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent" />
 
               {/* Floating Glass UI on Image */}
-              <div className="absolute bottom-8 left-8 right-8 glass-effect p-6 rounded-3xl animate-float">
+              <div className="absolute bottom-8 left-8 right-8 dark-glass p-6 rounded-3xl animate-float">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-white font-bold text-lg tracking-tight">Dal Lake, Kashmir</span>
                   <div className="flex items-center gap-1 bg-primary/20 backdrop-blur-md px-2 py-1 rounded-lg">
@@ -249,7 +247,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-8">
             <div className="space-y-4 max-w-2xl">
-              <span className="text-primary font-black uppercase tracking-[0.3em] text-[10px] sm:text-xs">Curated Selection</span>
+              <span className="text-primary-dark dark:text-primary font-black uppercase tracking-[0.3em] text-[10px] sm:text-xs">Curated Selection</span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-brand-dark dark:text-white tracking-tighter leading-tight">
                 Most Popular <br />
                 <span className="text-primary italic">Global Escapes</span>
@@ -310,7 +308,7 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="text-2xl sm:text-3xl font-black text-white mb-1">{stat.value}</div>
-                      <div className="text-white/50 text-[10px] sm:text-sm font-bold uppercase tracking-wider">{stat.label}</div>
+                      <div className="text-white/70 text-[10px] sm:text-sm font-bold uppercase tracking-wider">{stat.label}</div>
                     </div>
                   </motion.div>
                 ))}
@@ -319,14 +317,14 @@ export default function Home() {
 
             <div className="relative mt-8 lg:mt-0">
               <div className="absolute -inset-10 bg-primary/20 rounded-full blur-[100px] hidden sm:block" />
-              <div className="relative glass-effect p-6 sm:p-10 rounded-[2.5rem] sm:rounded-[3.5rem] border-white/10 overflow-hidden shadow-2xl dark:shadow-none">
+              <div className="relative dark-glass p-6 sm:p-10 rounded-[2.5rem] sm:rounded-[3.5rem] border-white/10 overflow-hidden shadow-2xl dark:shadow-none">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16" />
                 <div className="space-y-6 sm:space-y-8">
                   <div className="inline-block p-3 sm:p-4 bg-primary/10 rounded-2xl text-primary mb-2">
                     <Star size={24} className="sm:w-8 sm:h-8" fill="currentColor" />
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">Voted #1 Premium Travel Agency in the Region</h3>
-                  <p className="text-white/60 text-base sm:text-lg leading-relaxed">
+                  <p className="text-white/80 text-base sm:text-lg leading-relaxed">
                     Our commitment to excellence and personalized service has earned us the trust of thousands of luxury travelers.
                   </p>
                   <div className="pt-2 sm:pt-4">
@@ -345,7 +343,7 @@ export default function Home() {
       < section className="py-32 bg-soft-bg/30" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-24 max-w-3xl mx-auto space-y-6">
-            <span className="text-primary font-black uppercase tracking-[0.3em] text-xs">Testimonials</span>
+            <span className="text-primary-dark dark:text-primary font-black uppercase tracking-[0.3em] text-xs">Testimonials</span>
             <h2 className="text-4xl md:text-5xl font-black text-brand-dark dark:text-white tracking-tighter italic">Trusted Stories</h2>
             <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
           </div>

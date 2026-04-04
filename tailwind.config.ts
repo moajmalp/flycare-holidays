@@ -24,6 +24,7 @@ const config: Config = {
                 },
                 "brand-dark": "var(--brand-dark)",
                 "soft-bg": "var(--soft-bg)",
+                secondary: "var(--secondary)",
             },
             backgroundImage: {
                 "hero-gradient": "linear-gradient(135deg, #064E3B 0%, #047857 100%)",

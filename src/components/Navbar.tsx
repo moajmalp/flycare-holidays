@@ -48,7 +48,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex items-center justify-between transition-all duration-500 rounded-full px-6 py-2 shadow-2xl dark:shadow-none border ${scrolled
           ? "glass-premium border-white/30"
-          : "bg-background/80 dark:bg-brand-dark/80 backdrop-blur-xl border-white/40 dark:border-brand-dark/40 shadow-xl dark:shadow-none"
+          : "bg-background/80 dark:bg-white/5 backdrop-blur-xl border-white/40 dark:border-white/10 shadow-xl dark:shadow-none"
           }`}>
           {/* Left: Logo */}
           <div className="flex-shrink-0 flex items-center">
@@ -59,7 +59,7 @@ const Navbar = () => {
                   alt="Flycare Holidays"
                   width={210}
                   height={70}
-                  className="h-11 w-auto md:h-14 object-contain"
+                  className="h-11 w-auto md:h-14 object-contain dark:brightness-125 dark:contrast-110"
                   priority
                 />
               </div>
@@ -84,7 +84,7 @@ const Navbar = () => {
                       href={link.href}
                       className={`relative px-5 py-2 text-sm font-bold transition-all duration-300 rounded-full flex items-center gap-1 ${isActive
                         ? "text-white bg-primary shadow-sm"
-                        : "text-primary-deep/80 hover:text-primary hover:bg-background/50 dark:bg-white/5"
+                        : "text-primary-deep hover:text-primary hover:bg-background/50 dark:bg-white/5"
                         }`}
                     >
                       {link.name}

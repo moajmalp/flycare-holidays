@@ -2,52 +2,48 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #064E3B;
+  --foreground: #022C22; /* Darker emerald for maximum reading contrast */
 
   /* Primary Emerald Palette */
   --primary: #10B981;
   --primary-hover: #059669;
   --primary-dark: #065F46;
   --primary-light: #D1FAE5;
-  --primary-deep: #064E3B;
+  --primary-deep: #022C22; /* Same as foreground for robust headers */
 
   /* Accent Warm Gold/Sand */
   --accent: #F59E0B;
   --accent-hover: #D97706;
 
-  /* Neutral Palette */
+  /* Neutral Palette - Optimized for Light Mode Contrast */
   --soft-bg: #F8FAFC;
-  --brand-dark: #064E3B;
-  --secondary: #475467;
+  --brand-dark: #022C22;
+  --secondary: #022C22; /* Dark emerald for maximum readability in light mode */
 
   /* Premium Glass Settings */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --glass-bg: rgba(255, 255, 255, 0.85); /* Slightly less transparent for clarity */
+  --glass-border: rgba(0, 0, 0, 0.08); /* More defined border for light mode */
+  --glass-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .dark {
-  --background: #022c22;
-  /* Very dark emerald */
-  --foreground: #f8fafc;
-  /* Near white */
+  --background: #020617; /* Deep slate-black */
+  --foreground: #f1f5f9; /* Near white for high contrast */
 
-  --primary: #34d399;
-  /* Lighter emerald for visibility */
-  --primary-hover: #10b981;
+  --primary: #10b981; /* Consistent emerald */
+  --primary-hover: #34d399;
   --primary-dark: #065f46;
   --primary-light: #064e3b;
-  --primary-deep: #a7f3d0;
-  /* Muted light green for text */
+  --primary-deep: #ecfdf5; /* Very light emerald for headers in dark mode */
 
   --accent: #fbbf24;
   --accent-hover: #f59e0b;
 
-  --soft-bg: #064e3b;
-  --brand-dark: #022c22;
-  --secondary: #cbd5e1;
+  --soft-bg: #0f172a; /* Slate-dark for card backgrounds */
+  --brand-dark: #020617;
+  --secondary: #94a3b8; /* Muted slate for less important text */
 
-  --glass-bg: rgba(2, 44, 34, 0.7);
+  --glass-bg: rgba(15, 23, 42, 0.7);
   --glass-border: rgba(255, 255, 255, 0.1);
 }
 
@@ -58,6 +54,7 @@
   --color-primary-dark: var(--primary-dark);
   --color-primary-light: var(--primary-light);
   --color-primary-deep: var(--primary-deep);
+  --color-secondary: var(--secondary);
   --color-accent: var(--accent);
   --color-soft-bg: var(--soft-bg);
   --color-brand-dark: var(--brand-dark);
@@ -72,6 +69,15 @@ body {
 }
 
 /* --- DESIGN SYSTEM UTILITIES --- */
+
+/* Dark Translucent Glass (for stats on dark bg or image overlays) */
+.dark-glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(2, 44, 34, 0.6); /* Very dark emerald translucent */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
 
 /* Modern Frosted Glass Effect */
 .glass-premium,

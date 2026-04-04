@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
-import { Shield, Target, Users, Award, GlassWater, Compass, Sparkles, MapPin, Globe } from "lucide-react";
+import { Shield, Target, Users, Award, Sparkles, Globe } from "lucide-react";
 import Link from "next/link";
 
 const AboutPage = () => {
