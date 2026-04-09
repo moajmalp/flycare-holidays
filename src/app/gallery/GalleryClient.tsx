@@ -127,17 +127,10 @@ export default function GalleryClient({
                                     </div>
 
                                     {/* Hover Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-10 pointer-events-none">
+                                    <div className="absolute inset-0 bg-linear-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-10 pointer-events-none">
                                         <div className="w-full space-y-3 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                            <div className="flex items-center gap-2 text-primary">
-                                                {item.type === "video" ? <Play size={16} className="fill-current" /> : <MapPin size={16} />}
-                                                <span className="text-sm font-black uppercase tracking-widest">
-                                                    {item.type === "video" ? "Video" : "Photo"}
-                                                </span>
-                                            </div>
-                                            <div className="flex justify-between items-center">
-                                                <h3 className="text-white text-lg font-bold tracking-tight line-clamp-1">{item.alt}</h3>
-                                                <div className="w-12 h-12 rounded-full glass-effect flex items-center justify-center text-white shrink-0 ml-4">
+                                            <div className="flex items-center justify-end">
+                                                <div className="w-12 h-12 rounded-full glass-effect flex items-center justify-center text-white shrink-0">
                                                     <Maximize2 size={20} />
                                                 </div>
                                             </div>
@@ -162,10 +155,10 @@ export default function GalleryClient({
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-brand-dark/95 backdrop-blur-xl"
+                        className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-brand-dark/95 backdrop-blur-xl"
                         onClick={() => setSelectedMedia(null)}
                     >
-                        <button className="absolute top-10 right-10 w-16 h-16 rounded-full glass-effect flex items-center justify-center text-white hover:bg-primary transition-colors z-[101]">
+                        <button className="absolute top-10 right-10 w-16 h-16 rounded-full glass-effect flex items-center justify-center text-white hover:bg-primary transition-colors z-101">
                             <X size={32} />
                         </button>
 
@@ -190,13 +183,7 @@ export default function GalleryClient({
                                     className="w-full h-full object-contain"
                                 />
                             )}
-                            <div className="absolute bottom-10 left-10 right-10 glass-effect p-8 rounded-3xl border-white/20 pointer-events-none">
-                                <h3 className="text-white text-2xl font-black mb-2 line-clamp-1">{selectedMedia.alt}</h3>
-                                <div className="flex items-center gap-2 text-primary font-bold">
-                                    {selectedMedia.type === "video" ? <Play size={18} className="fill-current" /> : <Sparkles size={18} />}
-                                    <span>Captured by Flycare Travelers</span>
-                                </div>
-                            </div>
+
                         </motion.div>
                     </motion.div>
                 )}

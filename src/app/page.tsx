@@ -40,55 +40,66 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   const destinations = [
+
     {
-      title: "Amazing Kashmir",
-      subtitle: "4 Night–5 Days",
-      price: "12,999",
+      title: "Goa Bachelor / Friends",
+      subtitle: "4 Days / 3 Nights Beach Party Trip",
+      price: "4,999",
+      rating: "5.0",
+      reviews: "1.2k",
+      location: "Goa, West India",
+      image: "/images/goa.png",
+      slug: "goa-bachelor-package",
+    },
+    {
+      title: "Goa Couple",
+      subtitle: "4 Days / 3 Nights Romantic Getaway",
+      price: "5,999",
+      rating: "5.0",
+      reviews: "950+",
+      location: "Goa, West India",
+      image: "/images/goa-couple.png",
+      slug: "goa-couple-package",
+    },
+    {
+      title: "Kashmir Friends",
+      subtitle: "5 Days / 4 Nights Adventure Package",
+      price: "6,999",
       rating: "4.9",
-      reviews: "2.4k",
-      location: "Jammu & Kashmir",
-      image: "/images/kashmir.png",
-      slug: "amazing-kashmir",
+      reviews: "1.5k+",
+      location: "Srinagar, Kashmir",
+      image: "/images/kashmir-friends.png",
+      slug: "kashmir-friends-trip",
     },
     {
-      title: "Manali",
-      subtitle: "Winter Special Adventure",
-      price: "8,500",
-      rating: "4.7",
-      reviews: "1.8k",
-      location: "Himachal Pradesh",
-      image: "/images/manali.png",
-      slug: "mesmerizing-manali",
-    },
-    {
-      title: "Alleppey & Kochi",
-      subtitle: "Backwater Serenity",
-      price: "11,200",
-      rating: "4.8",
-      reviews: "3.1k",
-      location: "Kerala, South India",
-      image: "/images/kerala.png",
-      slug: "kerala-delight",
-    },
-    {
-      title: "Vietnam",
-      subtitle: "Cultural Journey",
-      price: "45,000",
-      rating: "4.9",
-      reviews: "4.2k",
-      location: "Southeast Asia",
-      image: "/images/vietnam.png",
-      slug: "vietnam-adventure",
-    },
-    {
-      title: "Delhi Agra",
-      subtitle: "Golden Triangle Highlights",
+      title: "Kashmir Couple",
+      subtitle: "5 Days / 4 Nights Romantic Getaway",
       price: "9,999",
-      rating: "4.6",
-      reviews: "2.7k",
-      location: "Delhi/Uttar Pradesh",
-      image: "/images/agra.png",
-      slug: "golden-triangle",
+      rating: "5.0",
+      reviews: "1.2k+",
+      location: "Srinagar, Kashmir",
+      image: "/images/kashmir-couple.png",
+      slug: "kashmir-couple-package",
+    },
+    {
+      title: "Manali Friends",
+      subtitle: "5 Days / 4 Nights Adventure Package",
+      price: "5,500",
+      rating: "4.8",
+      reviews: "1.1k+",
+      location: "Manali, Himachal",
+      image: "/images/manali-friends.png",
+      slug: "manali-friends-trip",
+    },
+    {
+      title: "Manali Couple",
+      subtitle: "5 Days / 4 Nights Romantic Getaway",
+      price: "7,999",
+      rating: "5.0",
+      reviews: "1.3k+",
+      location: "Manali, Himachal",
+      image: "/images/manali-couple.png",
+      slug: "manali-couple-package",
     },
   ];
 
@@ -219,20 +230,7 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent" />
 
-              {/* Floating Glass UI on Image */}
-              <div className="absolute bottom-8 left-8 right-8 dark-glass p-6 rounded-3xl animate-float">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-white font-bold text-lg tracking-tight">Dal Lake, Kashmir</span>
-                  <div className="flex items-center gap-1 bg-primary/20 backdrop-blur-md px-2 py-1 rounded-lg">
-                    <Star size={14} className="text-primary fill-primary" />
-                    <span className="text-white text-xs font-bold">4.9</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 text-white/80 text-sm">
-                  <MapPin size={14} />
-                  <span>North India&apos;s Paradise</span>
-                </div>
-              </div>
+
             </div>
 
             {/* Decorative Elements */}

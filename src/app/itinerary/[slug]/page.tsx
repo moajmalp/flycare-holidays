@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight, MapPin, Clock, Star, Sparkles, ArrowRight, MessageCircle, CheckCircle2 } from "lucide-react";
+import { ChevronRight, MapPin, Clock, Star, Sparkles, ArrowRight, MessageCircle, CheckCircle2, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { itineraryData, defaultItinerary } from "@/data/itinerary-data";
 import Footer from "@/components/Footer";
@@ -23,8 +23,8 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                     className="absolute inset-0 w-full h-full object-cover scale-105"
                     priority
                 />
-                <div className="absolute inset-0 bg-brand-dark/40 backdrop-blur-[1px]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
+                <div className="absolute inset-0 bg-brand-dark/50 backdrop-blur-[1px]" />
+                <div className="absolute inset-0 bg-linear-to-t from-brand-dark/80 via-brand-dark/20 to-transparent" />
 
                 <div className="absolute inset-x-0 bottom-0 p-10 md:p-24">
                     <div className="max-w-7xl mx-auto">
@@ -43,7 +43,7 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.1 }}
-                                    className="text-4xl md:text-6xl font-black text-brand-dark dark:text-white tracking-tighter leading-[0.9]"
+                                    className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[0.9] drop-shadow-2xl"
                                 >
                                     {data.title.split(' ').map((word, i) => (
                                         <span key={i} className={i === 1 ? "text-primary italic block" : ""}>{word} </span>
@@ -53,7 +53,7 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0.2 }}
-                                    className="text-lg md:text-xl font-medium max-w-xl leading-relaxed"
+                                    className="text-lg md:text-xl font-medium max-w-xl leading-relaxed text-white/90 drop-shadow-lg"
                                 >
                                     {data.description}
                                 </motion.p>
@@ -77,14 +77,14 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                         <Star size={16} fill="currentColor" />
                                         <span className="text-xs font-black uppercase tracking-widest">Experience</span>
                                     </div>
-                                    <p className="text-brand-dark dark:text-white font-black text-lg">Ultra Luxury</p>
+                                    <p className="text-brand-dark dark:text-white font-black text-lg">{data.experience}</p>
                                 </div>
                                 <div className="space-y-1">
                                     <div className="flex items-center gap-2 text-primary">
                                         <MapPin size={16} />
                                         <span className="text-xs font-black uppercase tracking-widest">Start City</span>
                                     </div>
-                                    <p className="text-brand-dark dark:text-white font-black text-lg">Srinagar</p>
+                                    <p className="text-brand-dark dark:text-white font-black text-lg">{data.startCity}</p>
                                 </div>
                             </motion.div>
                         </div>
@@ -172,20 +172,26 @@ const ItineraryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                     <div className="relative z-10 space-y-8 text-center">
                                         <div className="space-y-2">
                                             <span className="text-primary font-black uppercase tracking-[0.2em] text-xs">starting from</span>
-                                            <div className="text-4xl md:text-5xl font-black text-white tracking-tighter">₹12,499</div>
-                                            <span className="text-white/40 font-bold block">per person / twin sharing</span>
+                                            <div className="text-4xl md:text-5xl font-black text-white tracking-tighter">₹{data.price}</div>
+                                            <span className="text-white/40 font-bold block pb-4">per person / twin sharing</span>
                                         </div>
 
-                                        <div className="space-y-4 pt-4 border-t border-white/10">
-                                            {[
-                                                "Luxury Accommodations",
-                                                "Private Guided Tours",
-                                                "All Transfers Included",
-                                                "Premium Meal Plans"
-                                            ].map((inc, i) => (
-                                                <div key={i} className="flex items-center gap-3 text-sm font-bold text-white/70">
+                                        <div className="space-y-4 py-6 border-y border-white/10 text-left">
+                                            <span className="text-primary font-black uppercase tracking-[0.2em] text-[10px] block mb-2">Package Inclusions</span>
+                                            {data.inclusions.map((inc, i) => (
+                                                <div key={i} className="flex items-center gap-3 text-sm font-bold text-white/90">
                                                     <CheckCircle2 size={16} className="text-primary shrink-0" />
                                                     {inc}
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="space-y-4 py-6 border-b border-white/10 text-left">
+                                            <span className="text-red-400 font-black uppercase tracking-[0.2em] text-[10px] block mb-2">Package Exclusions</span>
+                                            {data.exclusions.map((exc, i) => (
+                                                <div key={i} className="flex items-center gap-3 text-sm font-bold text-white/50">
+                                                    <X size={16} className="text-red-400 shrink-0" />
+                                                    {exc}
                                                 </div>
                                             ))}
                                         </div>

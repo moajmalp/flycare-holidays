@@ -12,55 +12,66 @@ const DestinationsPage = () => {
     const [searchQuery, setSearchQuery] = useState("");
 
     const destinations = [
+
         {
-            title: "Amazing Kashmir",
-            subtitle: "5 Days / 4 Nights",
-            image: "/images/kashmir.png",
-            price: "12,999",
-            rating: "4.8",
-            reviews: "2.4k",
-            location: "Jammu & Kashmir",
-            slug: "amazing-kashmir"
+            title: "Goa Bachelor / Friends",
+            subtitle: "4 Days / 3 Nights Beach Party Trip",
+            image: "/images/goa.png",
+            price: "4,999",
+            rating: "5.0",
+            reviews: "1.2k",
+            location: "Goa, West India",
+            slug: "goa-bachelor-package"
         },
         {
-            title: "Mesmerizing Manali",
-            subtitle: "5 Days / 4 Nights",
-            image: "/images/manali.png",
-            price: "14,500",
+            title: "Goa Couple",
+            subtitle: "4 Days / 3 Nights Romantic Getaway",
+            image: "/images/goa-couple.png",
+            price: "5,999",
+            rating: "5.0",
+            reviews: "950+",
+            location: "Goa, West India",
+            slug: "goa-couple-package"
+        },
+        {
+            title: "Kashmir Friends",
+            subtitle: "5 Days / 4 Nights Adventure Package",
+            image: "/images/kashmir-friends.png",
+            price: "6,999",
             rating: "4.9",
-            reviews: "1.8k",
-            location: "Himachal Pradesh",
-            slug: "mesmerizing-manali"
+            reviews: "1.5k+",
+            location: "Srinagar, Kashmir",
+            slug: "kashmir-friends-trip"
         },
         {
-            title: "Kerala Delight",
-            subtitle: "4 Days / 3 Nights",
-            image: "/images/kerala.png",
-            price: "11,200",
-            rating: "4.7",
-            reviews: "3.1k",
-            location: "Kerala",
-            slug: "kerala-delight"
-        },
-        {
-            title: "Vietnam Adventure",
-            subtitle: "7 Days / 6 Nights",
-            image: "/images/vietnam.png",
-            price: "45,000",
-            rating: "4.9",
-            reviews: "4.2k",
-            location: "Vietnam",
-            slug: "vietnam-adventure"
-        },
-        {
-            title: "Golden Triangle",
-            subtitle: "3 Days / 2 Nights",
-            image: "/images/agra.png",
+            title: "Kashmir Couple",
+            subtitle: "5 Days / 4 Nights Romantic Getaway",
+            image: "/images/kashmir-couple.png",
             price: "9,999",
-            rating: "4.6",
-            reviews: "2.7k",
-            location: "Delhi/Agra",
-            slug: "golden-triangle"
+            rating: "5.0",
+            reviews: "1.2k+",
+            location: "Srinagar, Kashmir",
+            slug: "kashmir-couple-package"
+        },
+        {
+            title: "Manali Friends",
+            subtitle: "5 Days / 4 Nights Adventure Package",
+            image: "/images/manali-friends.png",
+            price: "5,500",
+            rating: "4.8",
+            reviews: "1.1k+",
+            location: "Manali, Himachal",
+            slug: "manali-friends-trip"
+        },
+        {
+            title: "Manali Couple",
+            subtitle: "5 Days / 4 Nights Romantic Getaway",
+            image: "/images/manali-couple.png",
+            price: "7,999",
+            rating: "5.0",
+            reviews: "1.3k+",
+            location: "Manali, Himachal",
+            slug: "manali-couple-package"
         }
     ];
 
