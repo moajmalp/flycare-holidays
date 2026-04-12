@@ -109,23 +109,25 @@ export default function Home() {
       name: "Rahul Sharma",
       role: "Solo Traveler",
       rating: 5,
-      content: "Flycare Holidays made my Kashmir trip effortless. The houseboat stay they arranged was the highlight of my year!",
-      avatar: "/images/manali.png",
+      content: "Flycare Holidays made my Kashmir trip effortless. The houseboat stay they arranged in Srinagar was the absolute highlight of my year!",
+      avatar: "/images/kashmir-couple.png",
       videoThumb: "/images/kashmir.png"
     },
     {
       name: "Anjali Menon",
-      role: "Family Vacation",
+      role: "Romantic Getaway",
       rating: 5,
-      content: "Excellent service from start to finish. Our Kerala backwater tour was perfectly timed and very professional.",
-      avatar: "/images/kerala.png",
+      content: "Our Goa couple trip was perfectly planned. From the private beach dinners to heritage tours, everything was handled with premium care.",
+      avatar: "/images/goa-couple.png",
+      videoThumb: "/images/goa-resort-thumb.png"
     },
     {
       name: "Vikram Duggal",
-      role: "Business Trip",
-      rating: 4,
-      content: "Reliable and efficient. I use them for all my domestic travel bookings now. Highly recommended for premium service.",
-      avatar: "/images/vietnam.png",
+      role: "Adventure Group",
+      rating: 5,
+      content: "The Manali adventure package for our group was flawless. The Volvo journey was comfortable and the Solang Valley activities were world-class.",
+      avatar: "/images/manali-friends.png",
+      videoThumb: "/images/manali-resort-thumb.png"
     }
   ];
 
